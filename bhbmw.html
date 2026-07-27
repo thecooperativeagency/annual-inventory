@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BHBMW Annual Inventory · Aug 1, 2025 – Jul 24, 2026</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+:root {
+  --accent:#1C69D3;
+  --ink:#221F1F;
+  --muted:#727171;
+  --line:#EBEBEB;
+  --bg:#F6F6F6;
+  --card:#fff;
+  --warn:#8a4b08;
+  --danger:#8b1e1e;
+  --font:"Inter","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0; font-family:var(--font); background:var(--bg); color:var(--ink);
+  -webkit-font-smoothing:antialiased; line-height:1.45;
+}
+.wrap { max-width:1120px; margin:0 auto; padding:0 18px 64px; }
+.top {
+  padding:28px 18px 24px; border-bottom:4px solid var(--accent); background:#fff;
+  margin:0 -18px 0; padding-left:calc(18px); padding-right:18px;
+}
+.top .inner { max-width:1120px; margin:0 auto; }
+.brand {
+  font-size:10px; letter-spacing:.14em; text-transform:uppercase; font-weight:600; color:var(--muted);
+}
+h1 { margin:8px 0 6px; font-size:28px; letter-spacing:-.03em; font-weight:750; }
+.sub { color:var(--muted); font-size:14px; max-width:62ch; }
+.meta { margin-top:10px; font-size:12px; color:var(--muted); }
+
+.top.has-photo {
+  background:
+    linear-gradient(105deg, rgba(34,31,31,.88) 0%, rgba(34,31,31,.55) 48%, rgba(34,31,31,.25) 100%),
+    url('assets/bhbmw-drone-header.jpg') center/cover no-repeat;
+  color:#fff;
+}
+.top.has-photo .sub, .top.has-photo .brand { color:rgba(255,255,255,.82); }
+.top.has-photo h1 { color:#fff; }
+
+.verdict {
+  background:#221F1F; color:#fff; padding:18px 20px; margin:18px 0 8px; border-radius:0;
+}
+.verdict h2 { margin:0 0 10px; font-size:13px; letter-spacing:.12em; text-transform:uppercase; font-weight:600; color:rgba(255,255,255,.7); }
+.verdict ol { margin:0; padding-left:1.15rem; }
+.verdict li { margin:0 0 8px; font-size:14px; }
+.verdict li:last-child { margin-bottom:0; }
+.stage-tabs-wrap {
+  position:sticky; top:0; z-index:20;
+  background:rgba(246,246,246,.96); backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line); margin:0 -18px; padding:10px 18px 0;
+}
+.stage-tabs { display:flex; flex-wrap:wrap; gap:0; max-width:1120px; margin:0 auto; }
+.stage-tabs button {
+  appearance:none; border:1px solid transparent; border-bottom:3px solid transparent;
+  background:transparent; color:var(--muted); padding:12px 12px 10px; font:inherit;
+  font-weight:600; cursor:pointer;
+}
+.stage-tabs button .tn { display:block; font-size:9px; letter-spacing:.12em; text-transform:uppercase; opacity:.75; margin-bottom:2px; }
+.stage-tabs button .tl { display:block; font-size:13px; font-weight:700; color:var(--ink); letter-spacing:-.01em; }
+.stage-tabs button:hover { background:#fff; border-color:var(--line); border-bottom-color:transparent; }
+.stage-tabs button.active {
+  background:#fff; border-color:var(--line); border-bottom:3px solid var(--accent);
+}
+.stage-tabs button.active .tn { color:var(--accent); opacity:1; }
+.panel { display:none; padding-top:8px; }
+.panel.active { display:block; }
+.funnel-stage {
+  background:#221F1F; color:#fff; padding:14px 16px; margin:18px 0 12px;
+}
+.funnel-stage .n { font-size:10px; letter-spacing:.14em; text-transform:uppercase; opacity:.7; }
+.funnel-stage .t { font-size:16px; font-weight:700; margin-top:4px; letter-spacing:-.02em; }
+.funnel-stage .d { font-size:13px; opacity:.85; margin-top:4px; max-width:70ch; }
+.block {
+  background:var(--card); border:1px solid var(--line); padding:18px 18px 8px; margin:0 0 14px;
+}
+.block h2 { margin:0 0 4px; font-size:18px; letter-spacing:-.02em; }
+.block h3 { margin:18px 0 8px; font-size:14px; letter-spacing:.04em; text-transform:uppercase; color:var(--muted); font-weight:700; }
+.when { font-size:12px; color:var(--muted); margin-bottom:10px; }
+.why {
+  background:#F0F2F5; border-left:4px solid var(--accent); padding:10px 12px; margin:0 0 14px; font-size:13px;
+}
+.stat-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:0 0 16px;
+}
+@media (max-width:720px) {
+  .stat-grid { grid-template-columns:1fr 1fr; }
+  .stage-tabs button { padding:10px 8px; }
+  .stage-tabs button .tl { font-size:12px; }
+  body { overflow-x:hidden; }
+}
+.stat { background:#fff; border:1px solid var(--line); padding:12px 12px 10px; }
+.stat .k { font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+.stat .v { font-size:24px; font-weight:750; letter-spacing:-.03em; margin-top:4px; font-variant-numeric:tabular-nums; }
+.stat .s { font-size:12px; color:var(--muted); margin-top:2px; }
+.table-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; margin:0 0 12px; }
+table { width:100%; border-collapse:collapse; font-size:13px; min-width:520px; }
+table.wide { min-width:720px; }
+th, td { padding:8px 8px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+th {
+  font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:600;
+  position:sticky; top:0; background:#fff;
+}
+td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+tr.total-row td { font-weight:750; border-top:2px solid var(--ink); background:#FAFAFA; }
+.muted { color:var(--muted); font-size:11px; font-weight:500; }
+.webline { font-size:12px; color:var(--muted); margin:8px 0 12px; }
+ul.impl { margin:0 0 12px; padding-left:1.15rem; }
+ul.impl li { margin:0 0 8px; font-size:14px; }
+.flag {
+  display:inline-block; font-size:10px; letter-spacing:.08em; text-transform:uppercase;
+  border:1px solid var(--line); padding:3px 6px; margin-right:6px; font-weight:700;
+}
+.flag.warn { border-color:#e0b070; color:var(--warn); }
+.flag.danger { border-color:#e0a0a0; color:var(--danger); }
+footer {
+  margin-top:28px; padding-top:16px; border-top:1px solid var(--line);
+  font-size:11px; color:var(--muted); letter-spacing:.03em;
+}
+@media print {
+  .stage-tabs-wrap { position:static; }
+  .panel { display:block !important; break-inside:avoid; }
+  .top.has-photo { background:#221F1F !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style>
+</head>
+<body>
+  <div class="top top has-photo">
+    <div class="inner">
+      <div class="brand">The Cooperative Agency · Internal manager pack · beta</div>
+      <h1>BHBMW Annual Inventory</h1>
+      <div class="sub">
+        Holistic inventory management for GM, New Car, and Used Car desks —
+        what sold, how fast, at what age and gross, and how that should change stocking, appraisal, price, and pressure.
+      </div>
+      <div class="meta">
+        Brian Harris BMW · VinSolutions sold history · Window <strong>Aug 1, 2025 – Jul 24, 2026</strong>
+        · Trailing 12 complete months through last sold date
+        · Generated 2026-07-27 14:13
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="verdict">
+      <h2>Window verdict</h2>
+      <ol><li><strong>1,201 units exited</strong> in the trailing 12 months — <strong>1,201 retail</strong> · <strong>0 wholesale</strong> (always labeled so the desk can separate them).</li><li>Type mix (all exits) — New 577 · Used 377 · CPO 247.</li><li>Median days-to-sale <strong>33d</strong> (avg 48d) · <strong>28%</strong> sold after day 60.</li><li>Avg selling price $55,548 · avg front $3,359 (front fill 78%) · avg back $1,885.</li><li>New front fill is <strong>59%</strong> — New front averages are caveated until the feed is complete.</li><li>Lot now: <strong>301 Active</strong>, median age 55d.</li><li>Lot mismatch example: <strong>X3</strong> — 49 on ground now; history med DTS 59d on 153 sold.</li></ol>
+    </div>
+
+    <div class="stage-tabs-wrap">
+      <div class="stage-tabs" role="tablist">
+        <button type="button" class="active" data-tab="overview" role="tab"><span class="tn">01</span><span class="tl">Overview</span></button>
+        <button type="button" data-tab="new" role="tab"><span class="tn">02</span><span class="tl">New</span></button>
+        <button type="button" data-tab="used" role="tab"><span class="tn">03</span><span class="tl">Used &amp; CPO</span></button>
+        <button type="button" data-tab="velocity" role="tab"><span class="tn">04</span><span class="tl">Velocity</span></button>
+        <button type="button" data-tab="economics" role="tab"><span class="tn">05</span><span class="tl">Economics</span></button>
+        <button type="button" data-tab="wholesale" role="tab"><span class="tn">06</span><span class="tl">Wholesale</span></button>
+        <button type="button" data-tab="lot" role="tab"><span class="tn">07</span><span class="tl">Lot now</span></button>
+        <button type="button" data-tab="units" role="tab"><span class="tn">08</span><span class="tl">Exceptions</span></button>
+      </div>
+    </div>
+
+    <!-- OVERVIEW -->
+    <section class="panel active" id="tab-overview">
+      <div class="funnel-stage">
+        <div class="n">GM lens</div>
+        <div class="t">Store inventory machine</div>
+        <div class="d">Units, mix, turn, gross contribution, and the operating implications — not lead handling.</div>
+      </div>
+
+      <section class="block">
+        <h2>Scoreboard — last 12 months</h2>
+        <div class="when">All inventory exits · de-duped by VIN · source file bhbmw-annual-inventory-latest.csv · 1,315 rows in → 1,201 unique (1,201 retail · 0 wholesale)</div>
+        <div class="why"><strong>What this means</strong>
+          This is the <strong>full last-12 inventory exit picture</strong> for the store.
+          <strong>Retail and wholesale stay labeled and separable</strong> (split table, monthly columns, Wholesale tab) so the GM can see what left retail vs what was wholesaled — without losing the combined machine view.
+          Live ground stock is on <strong>Lot now</strong>. Front averages only use rows where front is populated.
+        </div>
+        <div class="stat-grid">
+          <div class="stat"><div class="k">All exits</div><div class="v">1,201</div><div class="s">Aug 1, 2025 – Jul 24, 2026</div></div>
+          <div class="stat"><div class="k">Retail</div><div class="v">1,201</div><div class="s">100% of exits</div></div>
+          <div class="stat"><div class="k">Wholesale</div><div class="v">0</div><div class="s">0% · detail on Wholesale tab</div></div>
+          <div class="stat"><div class="k">Med DTS (all)</div><div class="v">33d</div><div class="s">Avg 48d</div></div>
+          <div class="stat"><div class="k">&gt;60 days (all)</div><div class="v">28%</div><div class="s">Share of all exits</div></div>
+          <div class="stat"><div class="k">Avg front (all)</div><div class="v">$3,359</div><div class="s">Fill 78%</div></div>
+        </div>
+
+        <h3>Exit channel split</h3>
+        <div class="table-scroll"><table class="wide">
+        <thead><tr>
+          <th>Channel</th><th class="num">Units</th><th class="num">Share of sold file</th>
+          <th class="num">Med DTS</th><th class="num">Avg SP</th><th class="num">Avg front</th><th class="num">Sum SP</th>
+        </tr></thead>
+        <tbody>
+          <tr><td><strong>Retail</strong></td>
+            <td class="num">1,201</td>
+            <td class="num">100%</td>
+            <td class="num">33d</td>
+            <td class="num">$55,548</td>
+            <td class="num">$3,359</td>
+            <td class="num">$66,713,363</td></tr>
+          <tr><td><strong>Wholesale</strong></td>
+            <td class="num">0</td>
+            <td class="num">0%</td>
+            <td class="num">—</td>
+            <td class="num">—</td>
+            <td class="num">—</td>
+            <td class="num">$0</td></tr>
+          <tr class="total-row"><td>All exits in file</td>
+            <td class="num">1,201</td>
+            <td class="num">100%</td>
+            <td class="num">—</td><td class="num">—</td><td class="num">—</td>
+            <td class="num">$66,713,363</td></tr>
+        </tbody></table></div>
+        <p class="webline">Retail vs wholesale stays labeled so the GM can separate them. Wholesale is thin/empty on this VinSolutions (Motosnap) inventory extract — that is expected. Authoritative wholesale/auction/dealer-trade exits will come from a CDK DMS export once scheduled; until then treat wholesale counts here as incomplete, not proof the store wholesaled zero.</p>
+
+        <h3>New · Used · CPO (all exits)</h3>
+        <div class="table-scroll"><table class="wide">
+        <thead><tr>
+          <th>Type</th><th class="num">Units</th><th class="num">Mix</th><th class="num">Med DTS</th>
+          <th class="num">&gt;60d</th><th class="num">Avg SP</th><th class="num">Avg front</th><th class="num">Avg back</th>
+        </tr></thead><tbody><tr><td><strong>New</strong></td><td class='num'>577</td><td class='num'>48%</td><td class='num'>39d</td><td class='num'>34%</td><td class='num'>$73,103</td><td class='num'>$2,814<div class='muted'>fill 59% · n=341</div></td><td class='num'>$2,042</td></tr><tr><td><strong>Used</strong></td><td class='num'>377</td><td class='num'>31%</td><td class='num'>30d</td><td class='num'>23%</td><td class='num'>$30,892</td><td class='num'>$3,815<div class='muted'>fill 97% · n=367</div></td><td class='num'>$1,430</td></tr><tr><td><strong>CPO</strong></td><td class='num'>247</td><td class='num'>21%</td><td class='num'>30d</td><td class='num'>20%</td><td class='num'>$52,173</td><td class='num'>$3,440<div class='muted'>fill 93% · n=230</div></td><td class='num'>$2,213</td></tr><tr class='total-row'><td>All exits</td><td class='num'>1,201</td><td class='num'>100%</td><td class='num'>33d</td><td class='num'>28%</td><td class='num'>$55,548</td><td class='num'>$3,359<div class='muted'>fill 78%</div></td><td class='num'>$1,885</td></tr></tbody></table></div>
+
+        <h3>Monthly exits — total with retail / wholesale</h3>
+        <div class="table-scroll"><table class="wide">
+        <thead><tr>
+          <th>Month</th><th class="num">Total</th><th class="num">Retail</th><th class="num">Wholesale</th>
+          <th class="num">New</th><th class="num">Used</th>
+          <th class="num">CPO</th><th class="num">&gt;60d</th><th class="num">&gt;60d share</th>
+        </tr></thead><tbody><tr><td>Aug 2025</td><td class='num'>124</td><td class='num'>124</td><td class='num'>0</td><td class='num'>58</td><td class='num'>42</td><td class='num'>24</td><td class='num'>29</td><td class='num'>23%</td></tr><tr><td>Sep 2025</td><td class='num'>84</td><td class='num'>84</td><td class='num'>0</td><td class='num'>37</td><td class='num'>37</td><td class='num'>10</td><td class='num'>18</td><td class='num'>21%</td></tr><tr><td>Oct 2025</td><td class='num'>112</td><td class='num'>112</td><td class='num'>0</td><td class='num'>51</td><td class='num'>42</td><td class='num'>19</td><td class='num'>23</td><td class='num'>21%</td></tr><tr><td>Nov 2025</td><td class='num'>102</td><td class='num'>102</td><td class='num'>0</td><td class='num'>55</td><td class='num'>27</td><td class='num'>20</td><td class='num'>34</td><td class='num'>33%</td></tr><tr><td>Dec 2025</td><td class='num'>113</td><td class='num'>113</td><td class='num'>0</td><td class='num'>59</td><td class='num'>27</td><td class='num'>27</td><td class='num'>38</td><td class='num'>34%</td></tr><tr><td>Jan 2026</td><td class='num'>95</td><td class='num'>95</td><td class='num'>0</td><td class='num'>43</td><td class='num'>31</td><td class='num'>21</td><td class='num'>27</td><td class='num'>28%</td></tr><tr><td>Feb 2026</td><td class='num'>76</td><td class='num'>76</td><td class='num'>0</td><td class='num'>37</td><td class='num'>28</td><td class='num'>11</td><td class='num'>30</td><td class='num'>39%</td></tr><tr><td>Mar 2026</td><td class='num'>114</td><td class='num'>114</td><td class='num'>0</td><td class='num'>56</td><td class='num'>29</td><td class='num'>29</td><td class='num'>39</td><td class='num'>34%</td></tr><tr><td>Apr 2026</td><td class='num'>114</td><td class='num'>114</td><td class='num'>0</td><td class='num'>49</td><td class='num'>33</td><td class='num'>32</td><td class='num'>29</td><td class='num'>25%</td></tr><tr><td>May 2026</td><td class='num'>84</td><td class='num'>84</td><td class='num'>0</td><td class='num'>36</td><td class='num'>31</td><td class='num'>17</td><td class='num'>15</td><td class='num'>18%</td></tr><tr><td>Jun 2026</td><td class='num'>101</td><td class='num'>101</td><td class='num'>0</td><td class='num'>48</td><td class='num'>30</td><td class='num'>23</td><td class='num'>27</td><td class='num'>27%</td></tr><tr><td>Jul 2026</td><td class='num'>82</td><td class='num'>82</td><td class='num'>0</td><td class='num'>48</td><td class='num'>20</td><td class='num'>14</td><td class='num'>25</td><td class='num'>30%</td></tr><tr class='total-row'><td>Window total</td><td class='num'>1,201</td><td class='num'>1,201</td><td class='num'>0</td><td class='num'>577</td><td class='num'>377</td><td class='num'>247</td><td class='num'>334</td><td class='num'>28%</td></tr></tbody></table></div>
+      </section>
+
+      <section class="block">
+        <h2>Stocking implications</h2>
+        <div class="when">Factual defaults from this window — starting point for Brett / New / Used desk conversation</div>
+        <ul class="impl"><li>Last-12 inventory picture includes every exit in the file, with retail vs wholesale always labeled. Wholesale tagged in this Motosnap extract: 0 — add Sale/Exit Type (or wholesale sold export) so the desk can see what left via wholesale/auction.</li><li>28% of units sold in-window left the lot after day 60 — aging is a first-class operating issue, not a tail anecdote.</li><li>Front gross averages $3,722 in the 0–15 day sold bucket vs $2,670 at 60+ ($1,052 softer when metal ages out).</li><li>New front gross is only populated on 59% of New sold rows — treat New avg front as directional and fix the export/DMS map before using it for desk contests.</li><li>New watch: 8 Series — 8 sold, median days-to-sale 88d, 75% over 60 days, avg front $6,014 (n=6).</li><li>Used avg front ($3,815, fill 97%) beats New avg front ($2,814, fill 59%) — acquisition quality is carrying deal gross while New front is compressed or under-reported.</li><li>Active lot now: 301 units, median age 55d (New 170 · Used 75 · CPO 56). Compare Lot now tab to historically slow models before the next order/appraisal meeting.</li></ul>
+      </section>
+    </section>
+
+    <!-- NEW -->
+    <section class="panel" id="tab-new">
+      <div class="funnel-stage">
+        <div class="n">New car desk</div>
+        <div class="t">New vehicle sold performance</div>
+        <div class="d">New exits in the window. Wholesale New (if any) also appears on the Wholesale tab for a clean look at auction/dealer dumps.</div>
+      </div>
+      <section class="block">
+        <h2>New — window</h2>
+        <div class="when">577 New sold · med DTS 39d · &gt;60d 34% · front fill 59%</div>
+        <div class="why"><strong>What this means</strong>
+          Days-to-sale = Sold Date − inventory created date. Front gross on New is incomplete in this Motosnap extract
+          (59% filled) — use unit counts and DTS as primary; treat avg front as directional only.
+        </div>
+        <div class="stat-grid">
+          <div class="stat"><div class="k">New sold</div><div class="v">577</div><div class="s">48% of store</div></div>
+          <div class="stat"><div class="k">Med DTS</div><div class="v">39d</div><div class="s">Avg 58d</div></div>
+          <div class="stat"><div class="k">&gt;60 days</div><div class="v">34%</div><div class="s">198 units</div></div>
+          <div class="stat"><div class="k">Avg SP</div><div class="v">$73,103</div><div class="s">Selling price</div></div>
+          <div class="stat"><div class="k">Avg front</div><div class="v">$2,814</div><div class="s">n=341 · fill 59%</div></div>
+          <div class="stat"><div class="k">Avg back</div><div class="v">$2,042</div><div class="s">F&amp;I side</div></div>
+        </div>
+
+        <h3>Top New models</h3>
+        <div class="table-scroll"><table class="wide">
+        <thead><tr>
+          <th>Model</th><th class="num">Sold</th><th class="num">Med DTS</th><th class="num">Avg DTS</th>
+          <th class="num">&gt;60</th><th class="num">&gt;60%</th><th class="num">Avg SP</th><th class="num">Avg front</th>
+        </tr></thead><tbody><tr><td>X3</td><td class='num'>153</td><td class='num'>59d</td><td class='num'>68d</td><td class='num'>72</td><td class='num'>47%</td><td class='num'>$57,092</td><td class='num'>$1,763<div class='muted'>n=70</div></td></tr><tr><td>X5</td><td class='num'>134</td><td class='num'>42d</td><td class='num'>58d</td><td class='num'>43</td><td class='num'>32%</td><td class='num'>$79,320</td><td class='num'>$2,660<div class='muted'>n=73</div></td></tr><tr><td>X7</td><td class='num'>52</td><td class='num'>35d</td><td class='num'>57d</td><td class='num'>17</td><td class='num'>33%</td><td class='num'>$102,620</td><td class='num'>$4,352<div class='muted'>n=37</div></td></tr><tr><td>3 Series</td><td class='num'>31</td><td class='num'>43d</td><td class='num'>61d</td><td class='num'>12</td><td class='num'>39%</td><td class='num'>$56,799</td><td class='num'>$1,553<div class='muted'>n=20</div></td></tr><tr><td>X1</td><td class='num'>26</td><td class='num'>38d</td><td class='num'>48d</td><td class='num'>5</td><td class='num'>19%</td><td class='num'>$48,354</td><td class='num'>$1,140<div class='muted'>n=12</div></td></tr><tr><td>X6</td><td class='num'>26</td><td class='num'>24d</td><td class='num'>36d</td><td class='num'>4</td><td class='num'>15%</td><td class='num'>$90,124</td><td class='num'>$3,366<div class='muted'>n=21</div></td></tr><tr><td>5 Series</td><td class='num'>24</td><td class='num'>37d</td><td class='num'>43d</td><td class='num'>7</td><td class='num'>29%</td><td class='num'>$71,758</td><td class='num'>$2,861<div class='muted'>n=18</div></td></tr><tr><td>2 Series</td><td class='num'>23</td><td class='num'>26d</td><td class='num'>41d</td><td class='num'>5</td><td class='num'>22%</td><td class='num'>$45,662</td><td class='num'>$1,748<div class='muted'>n=11</div></td></tr><tr><td>4 Series</td><td class='num'>23</td><td class='num'>32d</td><td class='num'>38d</td><td class='num'>6</td><td class='num'>26%</td><td class='num'>$66,418</td><td class='num'>$2,390<div class='muted'>n=14</div></td></tr><tr><td>X2</td><td class='num'>15</td><td class='num'>22d</td><td class='num'>30d</td><td class='num'>3</td><td class='num'>20%</td><td class='num'>$54,054</td><td class='num'>$1,917<div class='muted'>n=11</div></td></tr><tr><td>7 Series</td><td class='num'>10</td><td class='num'>32d</td><td class='num'>49d</td><td class='num'>2</td><td class='num'>20%</td><td class='num'>$114,699</td><td class='num'>$4,983<div class='muted'>n=9</div></td></tr><tr><td>M4</td><td class='num'>9</td><td class='num'>38d</td><td class='num'>88d</td><td class='num'>2</td><td class='num'>22%</td><td class='num'>$100,598</td><td class='num'>$4,376<div class='muted'>n=6</div></td></tr><tr><td>8 Series</td><td class='num'>8</td><td class='num'>88d</td><td class='num'>90d</td><td class='num'>6</td><td class='num'>75%</td><td class='num'>$117,549</td><td class='num'>$6,014<div class='muted'>n=6</div></td></tr><tr><td>M2</td><td class='num'>7</td><td class='num'>11d</td><td class='num'>30d</td><td class='num'>2</td><td class='num'>29%</td><td class='num'>$85,453</td><td class='num'>$4,359<div class='muted'>n=6</div></td></tr><tr><td>M3</td><td class='num'>7</td><td class='num'>13d</td><td class='num'>26d</td><td class='num'>1</td><td class='num'>14%</td><td class='num'>$97,076</td><td class='num'>$4,790<div class='muted'>n=7</div></td></tr></tbody></table></div>
+
+        <h3>New exterior color concentration</h3>
+        <div class="table-scroll"><table class="">
+        <thead><tr><th>Ext color</th><th class="num">Sold</th><th class="num">Share of New</th></tr></thead>
+        <tbody><tr><td>Black Sapphire Metallic</td><td class='num'>148</td><td class='num'>26%</td></tr><tr><td>Alpine White</td><td class='num'>89</td><td class='num'>15%</td></tr><tr><td>Mineral White Metallic</td><td class='num'>88</td><td class='num'>15%</td></tr><tr><td>Brooklyn Grey Metallic</td><td class='num'>41</td><td class='num'>7%</td></tr><tr><td>Skyscraper Grey Metallic</td><td class='num'>36</td><td class='num'>6%</td></tr><tr><td>Dravit Grey Metallic</td><td class='num'>32</td><td class='num'>6%</td></tr><tr><td>Carbon Black Metallic</td><td class='num'>21</td><td class='num'>4%</td></tr><tr><td>Dune Grey Metallic</td><td class='num'>16</td><td class='num'>3%</td></tr></tbody></table></div>
+        <p class="webline">Concentration is a visibility risk for orders — not a ban list. Pair with lot-now color counts in a later pass if needed.</p>
+      </section>
+    </section>
+
+    <!-- USED -->
+    <section class="panel" id="tab-used">
+      <div class="funnel-stage">
+        <div class="n">Used car desk</div>
+        <div class="t">Used &amp; CPO sold performance</div>
+        <div class="d">Used &amp; CPO exits in the window. Use Wholesale tab to isolate auction/dealer-trade used exits when tagged.</div>
+      </div>
+      <section class="block">
+        <h2>Used vs CPO</h2>
+        <div class="when">Hard split · Carfax/photo are merchandising controllables</div>
+        <div class="why"><strong>What this means</strong>
+          Straight Used and CPO behave differently on age and gross. Blending them hides the desk that needs pressure.
+        </div>
+        <div class="table-scroll"><table class="wide">
+        <thead><tr>
+          <th>Type</th><th class="num">Units</th><th class="num">Med DTS</th><th class="num">&gt;60%</th>
+          <th class="num">Avg SP</th><th class="num">Avg cost</th><th class="num">Avg front</th>
+          <th class="num">Front fill</th><th class="num">Avg back</th>
+          <th class="num">Photo %</th><th class="num">Carfax %</th>
+        </tr></thead>
+        <tbody>
+          <tr><td><strong>Used</strong></td><td class='num'>377</td><td class='num'>30d</td><td class='num'>23%</td><td class='num'>$30,892</td><td class='num'>$24,085</td><td class='num'>$3,815</td><td class='num'>97%</td><td class='num'>$1,430</td><td class='num'>89%</td><td class='num'>57%</td></tr><tr><td><strong>CPO</strong></td><td class='num'>247</td><td class='num'>30d</td><td class='num'>20%</td><td class='num'>$52,173</td><td class='num'>$43,431</td><td class='num'>$3,440</td><td class='num'>93%</td><td class='num'>$2,213</td><td class='num'>92%</td><td class='num'>36%</td></tr>
+        </tbody></table></div>
+
+        <h3>Used — top make/model</h3>
+        <div class="table-scroll"><table class="wide">
+        <thead><tr>
+          <th>Make / model</th><th class="num">Sold</th><th class="num">Med DTS</th><th class="num">Avg DTS</th>
+          <th class="num">&gt;60</th><th class="num">&gt;60%</th><th class="num">Avg SP</th><th class="num">Avg front</th>
+        </tr></thead><tbody><tr><td>BMW X3</td><td class='num'>31</td><td class='num'>23d</td><td class='num'>29d</td><td class='num'>4</td><td class='num'>13%</td><td class='num'>$26,691</td><td class='num'>$3,396<div class='muted'>n=30</div></td></tr><tr><td>BMW X5</td><td class='num'>31</td><td class='num'>17d</td><td class='num'>29d</td><td class='num'>2</td><td class='num'>6%</td><td class='num'>$40,431</td><td class='num'>$4,327<div class='muted'>n=30</div></td></tr><tr><td>BMW 5 Series</td><td class='num'>15</td><td class='num'>43d</td><td class='num'>44d</td><td class='num'>5</td><td class='num'>33%</td><td class='num'>$23,228</td><td class='num'>$4,749<div class='muted'>n=15</div></td></tr><tr><td>BMW 3 Series</td><td class='num'>14</td><td class='num'>24d</td><td class='num'>31d</td><td class='num'>1</td><td class='num'>7%</td><td class='num'>$23,541</td><td class='num'>$4,081<div class='muted'>n=14</div></td></tr><tr><td>BMW 2 Series</td><td class='num'>10</td><td class='num'>30d</td><td class='num'>36d</td><td class='num'>1</td><td class='num'>10%</td><td class='num'>$32,589</td><td class='num'>$2,274<div class='muted'>n=5</div></td></tr><tr><td>BMW 4 Series</td><td class='num'>10</td><td class='num'>40d</td><td class='num'>45d</td><td class='num'>3</td><td class='num'>30%</td><td class='num'>$27,039</td><td class='num'>$2,830<div class='muted'>n=10</div></td></tr><tr><td>BMW X7</td><td class='num'>9</td><td class='num'>17d</td><td class='num'>19d</td><td class='num'>0</td><td class='num'>0%</td><td class='num'>$60,936</td><td class='num'>$4,012<div class='muted'>n=8</div></td></tr><tr><td>BMW 7 Series</td><td class='num'>8</td><td class='num'>19d</td><td class='num'>23d</td><td class='num'>2</td><td class='num'>25%</td><td class='num'>$43,503</td><td class='num'>$5,572<div class='muted'>n=8</div></td></tr><tr><td>Honda Accord Sedan</td><td class='num'>8</td><td class='num'>17d</td><td class='num'>24d</td><td class='num'>1</td><td class='num'>12%</td><td class='num'>$21,133</td><td class='num'>$4,300<div class='muted'>n=8</div></td></tr><tr><td>Acura RDX</td><td class='num'>7</td><td class='num'>43d</td><td class='num'>56d</td><td class='num'>2</td><td class='num'>29%</td><td class='num'>$22,805</td><td class='num'>$3,576<div class='muted'>n=6</div></td></tr><tr><td>GMC Yukon</td><td class='num'>7</td><td class='num'>27d</td><td class='num'>40d</td><td class='num'>1</td><td class='num'>14%</td><td class='num'>$47,277</td><td class='num'>$5,113<div class='muted'>n=7</div></td></tr><tr><td>Acura MDX</td><td class='num'>6</td><td class='num'>24d</td><td class='num'>32d</td><td class='num'>1</td><td class='num'>17%</td><td class='num'>$30,198</td><td class='num'>$2,728<div class='muted'>n=6</div></td></tr><tr><td>Chevrolet Silverado 1500</td><td class='num'>6</td><td class='num'>34d</td><td class='num'>38d</td><td class='num'>1</td><td class='num'>17%</td><td class='num'>$40,974</td><td class='num'>$4,346<div class='muted'>n=6</div></td></tr><tr><td>INFINITI QX60</td><td class='num'>6</td><td class='num'>26d</td><td class='num'>27d</td><td class='num'>0</td><td class='num'>0%</td><td class='num'>$20,253</td><td class='num'>$3,847<div class='muted'>n=6</div></td></tr><tr><td>Chevrolet Tahoe</td><td class='num'>5</td><td class='num'>35d</td><td class='num'>44d</td><td class='num'>2</td><td class='num'>40%</td><td class='num'>$39,978</td><td class='num'>$4,681<div class='muted'>n=5</div></td></tr></tbody></table></div>
+
+        <h3>CPO — top make/model</h3>
+        <div class="table-scroll"><table class="wide">
+        <thead><tr>
+          <th>Make / model</th><th class="num">Sold</th><th class="num">Med DTS</th><th class="num">Avg DTS</th>
+          <th class="num">&gt;60</th><th class="num">&gt;60%</th><th class="num">Avg SP</th><th class="num">Avg front</th>
+        </tr></thead><tbody><tr><td>BMW X3</td><td class='num'>64</td><td class='num'>32d</td><td class='num'>37d</td><td class='num'>15</td><td class='num'>23%</td><td class='num'>$43,161</td><td class='num'>$2,247<div class='muted'>n=58</div></td></tr><tr><td>BMW X5</td><td class='num'>52</td><td class='num'>31d</td><td class='num'>40d</td><td class='num'>11</td><td class='num'>21%</td><td class='num'>$55,882</td><td class='num'>$3,652<div class='muted'>n=50</div></td></tr><tr><td>BMW X7</td><td class='num'>27</td><td class='num'>26d</td><td class='num'>32d</td><td class='num'>4</td><td class='num'>15%</td><td class='num'>$71,410</td><td class='num'>$5,951<div class='muted'>n=26</div></td></tr><tr><td>BMW 5 Series</td><td class='num'>17</td><td class='num'>32d</td><td class='num'>48d</td><td class='num'>5</td><td class='num'>29%</td><td class='num'>$47,568</td><td class='num'>$2,385<div class='muted'>n=16</div></td></tr><tr><td>BMW 3 Series</td><td class='num'>15</td><td class='num'>32d</td><td class='num'>39d</td><td class='num'>3</td><td class='num'>20%</td><td class='num'>$38,857</td><td class='num'>$2,070<div class='muted'>n=15</div></td></tr><tr><td>BMW X1</td><td class='num'>13</td><td class='num'>28d</td><td class='num'>40d</td><td class='num'>2</td><td class='num'>15%</td><td class='num'>$39,504</td><td class='num'>$1,546<div class='muted'>n=10</div></td></tr><tr><td>BMW 4 Series</td><td class='num'>12</td><td class='num'>25d</td><td class='num'>33d</td><td class='num'>1</td><td class='num'>8%</td><td class='num'>$45,776</td><td class='num'>$3,340<div class='muted'>n=11</div></td></tr><tr><td>BMW 7 Series</td><td class='num'>11</td><td class='num'>17d</td><td class='num'>22d</td><td class='num'>2</td><td class='num'>18%</td><td class='num'>$88,440</td><td class='num'>$6,690<div class='muted'>n=11</div></td></tr><tr><td>BMW X4</td><td class='num'>10</td><td class='num'>22d</td><td class='num'>36d</td><td class='num'>2</td><td class='num'>20%</td><td class='num'>$46,596</td><td class='num'>$3,728<div class='muted'>n=8</div></td></tr><tr><td>BMW 2 Series</td><td class='num'>9</td><td class='num'>47d</td><td class='num'>71d</td><td class='num'>2</td><td class='num'>22%</td><td class='num'>$34,970</td><td class='num'>$813<div class='muted'>n=8</div></td></tr><tr><td>BMW X6</td><td class='num'>7</td><td class='num'>28d</td><td class='num'>31d</td><td class='num'>1</td><td class='num'>14%</td><td class='num'>$65,162</td><td class='num'>$5,958<div class='muted'>n=7</div></td></tr><tr><td>BMW 8 Series</td><td class='num'>5</td><td class='num'>15d</td><td class='num'>19d</td><td class='num'>0</td><td class='num'>0%</td><td class='num'>$69,461</td><td class='num'>$6,121<div class='muted'>n=5</div></td></tr></tbody></table></div>
+      </section>
+    </section>
+
+    <!-- VELOCITY -->
+    <section class="panel" id="tab-velocity">
+      <div class="funnel-stage">
+        <div class="n">Turn &amp; aging</div>
+        <div class="t">How long metal sits before it becomes a deal</div>
+        <div class="d">Age bucket at sale, days-to-sale, and the front-gross cost of waiting.</div>
+      </div>
+      <section class="block">
+        <h2>Age at sale → front gross</h2>
+        <div class="when">Buckets from VinSolutions Age Bucket (≈ age at sale on sold rows)</div>
+        <div class="why"><strong>What this means</strong>
+          This is the core “everything affects everything” panel: time on lot is not free. Compare avg/med front across buckets.
+          Front still respects fill rate — n_fg is rows with front populated.
+        </div>
+        <div class="table-scroll"><table class="wide">
+        <thead><tr>
+          <th>Age bucket</th><th class="num">Sold</th><th class="num">Share</th><th class="num">Med DTS</th>
+          <th class="num">Avg front</th><th class="num">Med front</th><th class="num">Front n</th>
+        </tr></thead><tbody><tr><td>0-15</td><td class='num'>247</td><td class='num'>21%</td><td class='num'>8d</td><td class='num'>$3,722</td><td class='num'>$3,845</td><td class='num'>210</td></tr><tr><td>16-30</td><td class='num'>243</td><td class='num'>20%</td><td class='num'>21d</td><td class='num'>$3,838</td><td class='num'>$3,750</td><td class='num'>190</td></tr><tr><td>31-45</td><td class='num'>175</td><td class='num'>15%</td><td class='num'>35d</td><td class='num'>$3,746</td><td class='num'>$3,657</td><td class='num'>150</td></tr><tr><td>46-60</td><td class='num'>109</td><td class='num'>9%</td><td class='num'>51d</td><td class='num'>$3,157</td><td class='num'>$3,102</td><td class='num'>87</td></tr><tr><td>60+</td><td class='num'>427</td><td class='num'>36%</td><td class='num'>80d</td><td class='num'>$2,670</td><td class='num'>$2,181</td><td class='num'>301</td></tr></tbody></table></div>
+
+        <h3>Default operating flags</h3>
+        <p class="webline">
+          <span class="flag danger">&gt;60d sale</span> aged exit ·
+          <span class="flag warn">Model n≥8 &amp; med DTS≥45</span> slow cell ·
+          <span class="flag warn">New front fill &lt;80%</span> data risk ·
+          <span class="flag">Active in slow history</span> order/appraisal mismatch
+        </p>
+      </section>
+    </section>
+
+    <!-- ECONOMICS -->
+    <section class="panel" id="tab-economics">
+      <div class="funnel-stage">
+        <div class="n">Deal economics</div>
+        <div class="t">Price, cost, front, back</div>
+        <div class="d">Deal economics on all exits by type. Pair with the channel split / Wholesale tab to separate retail vs wholesale dollars. Invoice/book empty — omitted.</div>
+      </div>
+      <section class="block">
+        <h2>Gross contribution by type</h2>
+        <div class="when">Selling price · cost · front (non-blank only) · back (zeros kept)</div>
+        <div class="why"><strong>What this means</strong>
+          Sum front is only over rows with front present — it understates true total front if fill is incomplete (especially New).
+          Back sums include $0. Invoice / KBB / NADA / wholesale book columns were empty in the Motosnap annual extract and are not shown.
+        </div>
+        <div class="table-scroll"><table class="wide">
+        <thead><tr>
+          <th>Type</th><th class="num">Units</th><th class="num">Sum SP</th><th class="num">Avg cost</th>
+          <th class="num">Sum front*</th><th class="num">Front n</th><th class="num">Sum back</th>
+          <th class="num">Avg total (FG+BG where FG)</th>
+        </tr></thead>
+        <tbody>
+        <tr><td><strong>New</strong></td><td class='num'>577</td><td class='num'>$42,180,321</td><td class='num'>$66,524</td><td class='num'>$959,582</td><td class='num'>341</td><td class='num'>$1,178,281</td><td class='num'>$4,856</td></tr><tr><td><strong>Used</strong></td><td class='num'>377</td><td class='num'>$11,646,268</td><td class='num'>$24,085</td><td class='num'>$1,400,175</td><td class='num'>367</td><td class='num'>$538,925</td><td class='num'>$5,245</td></tr><tr><td><strong>CPO</strong></td><td class='num'>247</td><td class='num'>$12,886,774</td><td class='num'>$43,431</td><td class='num'>$791,222</td><td class='num'>230</td><td class='num'>$546,722</td><td class='num'>$5,654</td></tr>
+        </tbody></table></div>
+        <p class="webline">*Sum front is incomplete when fill &lt; 100%. Do not desk-rank New on front until fill is fixed.</p>
+      </section>
+    </section>
+
+
+    <!-- WHOLESALE -->
+    <section class="panel" id="tab-wholesale">
+      <div class="funnel-stage">
+        <div class="n">Wholesale / auction / dealer exits</div>
+        <div class="t">What we wholesaled — isolatable view</div>
+        <div class="d">Auction, OPENLANE, dealer trade, and other non-retail dispositions when the feed tags them.</div>
+      </div>
+      <section class="block">
+        <h2>Wholesale exits</h2>
+        <div class="when">0 wholesale · 1,201 retail · 1,201 all exits in window</div>
+        <div class="why"><strong>What this means</strong>
+          Retail vs wholesale stays labeled so the GM can separate them. Wholesale is thin/empty on this VinSolutions (Motosnap) inventory extract — that is expected. Authoritative wholesale/auction/dealer-trade exits will come from a CDK DMS export once scheduled; until then treat wholesale counts here as incomplete, not proof the store wholesaled zero.
+          This tab isolates wholesale/auction/dealer-trade exits so the GM can study that lane clearly. Store overview totals still include these units in the last-12 picture — they are labeled, not hidden.
+        </div>
+        <div class="stat-grid">
+          <div class="stat"><div class="k">Wholesale units</div><div class="v">0</div><div class="s">Tagged exits</div></div>
+          <div class="stat"><div class="k">Retail units</div><div class="v">1,201</div><div class="s">Rest of last-12 picture</div></div>
+          <div class="stat"><div class="k">Wholesale med DTS</div><div class="v">—</div><div class="s">Avg —</div></div>
+          <div class="stat"><div class="k">Wholesale avg SP</div><div class="v">—</div><div class="s">Exit price</div></div>
+          <div class="stat"><div class="k">Wholesale avg front</div><div class="v">—</div><div class="s">Fill —</div></div>
+          <div class="stat"><div class="k">Wholesale sum SP</div><div class="v">$0</div><div class="s">Window total</div></div>
+        </div>
+
+        <h3>Wholesale by New / Used / CPO</h3>
+        <div class="table-scroll"><table class="wide">
+        <thead><tr>
+          <th>Type</th><th class="num">Units</th><th class="num">Mix</th><th class="num">Med DTS</th>
+          <th class="num">Avg SP</th><th class="num">Avg front</th><th class="num">Avg back</th>
+        </tr></thead>
+        <tbody><tr><td colspan='7'>No wholesale units tagged in this extract.</td></tr></tbody></table></div>
+
+        <h3>Wholesale outlet / label</h3>
+        <div class="table-scroll"><table>
+        <thead><tr><th>Label</th><th class="num">Units</th></tr></thead>
+        <tbody><tr><td colspan='2'>None tagged — add Motosnap Sale Type / Exit Type or a wholesale sold report.</td></tr></tbody></table></div>
+
+        <h3>Wholesale model mix</h3>
+        <div class="table-scroll"><table class="wide">
+        <thead><tr>
+          <th>Model</th><th class="num">Sold</th><th class="num">Med DTS</th><th class="num">Avg DTS</th>
+          <th class="num">&gt;60</th><th class="num">&gt;60%</th><th class="num">Avg SP</th><th class="num">Avg front</th>
+        </tr></thead>
+        <tbody><tr><td colspan='8'>No wholesale model rows.</td></tr></tbody></table></div>
+
+        <h3>Recent wholesale units</h3>
+        <div class="table-scroll"><table class="wide"><thead><tr><th>Stock</th><th>Type</th><th>Channel</th><th>Vehicle</th><th class="num">Sold</th><th class="num">DTS</th><th class="num">Age bucket</th><th class="num">Selling $</th><th class="num">Front</th><th class="num">Back</th></tr></thead><tbody><tr><td colspan='10'>No wholesale unit rows in file.</td></tr></tbody></table></div>
+      </section>
+    </section>
+
+    <!-- LOT NOW -->
+    <section class="panel" id="tab-lot">
+      <div class="funnel-stage">
+        <div class="n">Supply on the ground</div>
+        <div class="t">Active lot bridge</div>
+        <div class="d">What you are holding right now vs what historically sits and softens.</div>
+      </div>
+      <section class="block">
+        <h2>Active lot</h2>
+        <div class="when">Snapshot file bhbmw-inventory-latest.csv · 6,451 file rows → 301 Active</div>
+        <div class="why"><strong>What this means</strong>
+          Active snapshot is the daily VinSolutions lot feed (same family as GM Weekly Inventory tab).
+          It is not the annual sold file. Use mismatches to stop restocking slow history.
+        </div>
+        
+        <div class="stat-grid">
+          <div class="stat"><div class="k">Active lot</div><div class="v">301</div><div class="s">VinSolutions Active</div></div>
+          <div class="stat"><div class="k">New on ground</div><div class="v">170</div><div class="s">of active</div></div>
+          <div class="stat"><div class="k">Used on ground</div><div class="v">75</div><div class="s">excl. CPO</div></div>
+          <div class="stat"><div class="k">CPO on ground</div><div class="v">56</div><div class="s">Certified</div></div>
+          <div class="stat"><div class="k">Median age now</div><div class="v">55d</div><div class="s">Active units</div></div>
+          <div class="stat"><div class="k">No photo</div><div class="v">101</div><div class="s">34% of active</div></div>
+        </div>
+        <h3>Age of active inventory</h3>
+        <div class="table-scroll"><table class="">
+        <thead><tr><th>Age bucket</th><th class="num">Units</th><th class="num">Share</th></tr></thead>
+        <tbody><tr><td>0-15</td><td class='num'>39</td><td class='num'>13%</td></tr><tr><td>16-30</td><td class='num'>43</td><td class='num'>14%</td></tr><tr><td>31-45</td><td class='num'>42</td><td class='num'>14%</td></tr><tr><td>46-60</td><td class='num'>35</td><td class='num'>12%</td></tr><tr><td>60+</td><td class='num'>142</td><td class='num'>47%</td></tr></tbody></table></div>
+        <h3>Aging by type</h3>
+        <div class="table-scroll"><table class="wide">
+        <thead><tr>
+          <th>Type</th><th class="num">Units</th><th class="num">Med age</th>
+          <th class="num">&gt;60d</th><th class="num">&gt;90d</th><th class="num">&gt;180d</th>
+        </tr></thead>
+        <tbody><tr><td><strong>New</strong></td><td class='num'>170</td><td class='num'>68d</td><td class='num'>91</td><td class='num'>65</td><td class='num'>22</td></tr><tr><td><strong>Used</strong></td><td class='num'>75</td><td class='num'>39d</td><td class='num'>24</td><td class='num'>6</td><td class='num'>1</td></tr><tr><td><strong>CPO</strong></td><td class='num'>56</td><td class='num'>60d</td><td class='num'>27</td><td class='num'>19</td><td class='num'>17</td></tr></tbody></table></div>
+
+        <h3>Mismatch — New on lot in historically slow cells</h3>
+        <div class="when">History: model n≥8 and median DTS≥45 days · On lot: ≥2 Active</div>
+        <div class="table-scroll"><table class="wide">
+        <thead><tr>
+          <th>Model</th><th class="num">On lot</th><th class="num">Lot med age</th>
+          <th class="num">Hist sold</th><th class="num">Hist med DTS</th>
+          <th class="num">Hist avg front</th><th class="num">Hist &gt;60%</th>
+        </tr></thead>
+        <tbody><tr><td>X3</td><td class='num'>49</td><td class='num'>55d</td><td class='num'>153</td><td class='num'>59d</td><td class='num'>$1,763</td><td class='num'>47%</td></tr><tr><td>8 Series</td><td class='num'>4</td><td class='num'>182d</td><td class='num'>8</td><td class='num'>88d</td><td class='num'>$6,014</td><td class='num'>75%</td></tr></tbody></table></div>
+
+        <h3>Mismatch — Used/CPO make-model</h3>
+        <div class="table-scroll"><table class="wide">
+        <thead><tr>
+          <th>Make / model</th><th class="num">On lot</th><th class="num">Lot med age</th>
+          <th class="num">Hist sold</th><th class="num">Hist med DTS</th>
+          <th class="num">Hist avg front</th><th class="num">Hist &gt;60%</th>
+        </tr></thead>
+        <tbody><tr><td>BMW 2 Series</td><td class='num'>2</td><td class='num'>641d</td><td class='num'>9</td><td class='num'>47d</td><td class='num'>$813</td><td class='num'>22%</td></tr></tbody></table></div>
+
+        <h3>Oldest Active units now</h3>
+        <div class="table-scroll"><table class="wide">
+        <thead><tr>
+          <th>Stock</th><th>Type</th><th>Vehicle</th><th class="num">Age</th>
+          <th class="num">Internet $</th><th class="num">Cost</th><th class="num">Photo</th>
+        </tr></thead>
+        <tbody><tr><td>23BT475</td><td>New</td><td>2023 BMW X3<div class='muted'>sDrive30i</div></td><td class='num'>1232d</td><td class='num'>$53,770</td><td class='num'>$51,140</td><td class='num'>No</td></tr><tr><td>24B015</td><td>New</td><td>2024 BMW 8 Series<div class='muted'>M850i xDrive</div></td><td class='num'>1158d</td><td class='num'>$118,845</td><td class='num'>$111,670</td><td class='num'>No</td></tr><tr><td>PBL569</td><td>CPO</td><td>2020 BMW 2 Series<div class='muted'>228i xDrive</div></td><td class='num'>1083d</td><td class='num'>$29,990</td><td class='num'>$28,904</td><td class='num'>Yes</td></tr><tr><td>24BT677</td><td>New</td><td>2024 BMW X3<div class='muted'>M40i</div></td><td class='num'>742d</td><td class='num'>$71,620</td><td class='num'>$67,725</td><td class='num'>No</td></tr><tr><td>25B017</td><td>New</td><td>2025 BMW M4<div class='muted'>Competition xDrive</div></td><td class='num'>742d</td><td class='num'>$98,075</td><td class='num'>$92,275</td><td class='num'>No</td></tr><tr><td>24B309</td><td>New</td><td>2024 BMW 2 Series<div class='muted'>M240i xDrive</div></td><td class='num'>739d</td><td class='num'>$58,095</td><td class='num'>$55,165</td><td class='num'>No</td></tr><tr><td>26BT073L</td><td>CPO</td><td>2026 BMW X5<div class='muted'>sDrive40i</div></td><td class='num'>326d</td><td class='num'>$67,990</td><td class='num'>$61,741</td><td class='num'>Yes</td></tr><tr><td>26BT181</td><td>New</td><td>2026 BMW X5 M<div class='muted'>Competition</div></td><td class='num'>322d</td><td class='num'>$0</td><td class='num'>$135,176</td><td class='num'>Yes</td></tr><tr><td>26B043L</td><td>CPO</td><td>2026 BMW 5 Series<div class='muted'>530i</div></td><td class='num'>299d</td><td class='num'>$58,990</td><td class='num'>$54,420</td><td class='num'>Yes</td></tr><tr><td>26BT143L</td><td>CPO</td><td>2026 BMW X1<div class='muted'>xDrive28i</div></td><td class='num'>299d</td><td class='num'>$46,490</td><td class='num'>$43,846</td><td class='num'>Yes</td></tr><tr><td>26BT186L</td><td>CPO</td><td>2026 BMW X3<div class='muted'>30 xDrive</div></td><td class='num'>286d</td><td class='num'>$54,290</td><td class='num'>$50,700</td><td class='num'>Yes</td></tr><tr><td>26B079</td><td>New</td><td>2026 BMW 2 Series<div class='muted'>228</div></td><td class='num'>283d</td><td class='num'>$0</td><td class='num'>$45,725</td><td class='num'>Yes</td></tr><tr><td>26B083</td><td>New</td><td>2026 BMW 2 Series<div class='muted'>M235 xDrive</div></td><td class='num'>279d</td><td class='num'>$0</td><td class='num'>$56,140</td><td class='num'>Yes</td></tr><tr><td>26BT074L</td><td>CPO</td><td>2026 BMW X5<div class='muted'>sDrive40i</div></td><td class='num'>278d</td><td class='num'>$67,290</td><td class='num'>$62,377</td><td class='num'>Yes</td></tr><tr><td>26BT135L</td><td>CPO</td><td>2026 BMW X3<div class='muted'>30 xDrive</div></td><td class='num'>278d</td><td class='num'>$49,890</td><td class='num'>$46,104</td><td class='num'>Yes</td></tr><tr><td>26BT272L</td><td>CPO</td><td>2026 BMW X3<div class='muted'>30 xDrive</div></td><td class='num'>264d</td><td class='num'>$51,990</td><td class='num'>$49,398</td><td class='num'>Yes</td></tr><tr><td>26BT298L</td><td>CPO</td><td>2026 BMW X7<div class='muted'>xDrive40i</div></td><td class='num'>264d</td><td class='num'>$89,990</td><td class='num'>$81,828</td><td class='num'>Yes</td></tr><tr><td>26BT316L</td><td>CPO</td><td>2026 BMW X5<div class='muted'>sDrive40i</div></td><td class='num'>251d</td><td class='num'>$71,990</td><td class='num'>$64,715</td><td class='num'>Yes</td></tr><tr><td>26BT269L</td><td>New</td><td>2026 BMW X3<div class='muted'>30 xDrive</div></td><td class='num'>249d</td><td class='num'>$0</td><td class='num'>$47,376</td><td class='num'>No</td></tr><tr><td>26B097</td><td>New</td><td>2026 BMW 2 Series<div class='muted'>230i</div></td><td class='num'>245d</td><td class='num'>$0</td><td class='num'>$51,970</td><td class='num'>Yes</td></tr><tr><td>26B015L</td><td>CPO</td><td>2026 BMW 8 Series<div class='muted'>840i</div></td><td class='num'>244d</td><td class='num'>$86,190</td><td class='num'>$74,610</td><td class='num'>Yes</td></tr><tr><td>26BT158L</td><td>CPO</td><td>2026 BMW X3<div class='muted'>30 xDrive</div></td><td class='num'>244d</td><td class='num'>$53,990</td><td class='num'>$49,279</td><td class='num'>No</td></tr><tr><td>26BT198L</td><td>New</td><td>2026 BMW X7<div class='muted'>xDrive40i</div></td><td class='num'>244d</td><td class='num'>$0</td><td class='num'>$78,461</td><td class='num'>No</td></tr><tr><td>26B086L</td><td>CPO</td><td>2026 BMW 3 Series<div class='muted'>330i NA</div></td><td class='num'>244d</td><td class='num'>$48,990</td><td class='num'>$46,317</td><td class='num'>Yes</td></tr><tr><td>26BT200L</td><td>CPO</td><td>2026 BMW X1<div class='muted'>xDrive28i</div></td><td class='num'>238d</td><td class='num'>$43,990</td><td class='num'>$41,237</td><td class='num'>Yes</td></tr></tbody></table></div>
+      </section>
+    </section>
+
+    <!-- EXCEPTIONS -->
+    <section class="panel" id="tab-units">
+      <div class="funnel-stage">
+        <div class="n">Unit lists</div>
+        <div class="t">Exceptions worth a desk conversation</div>
+        <div class="d">Exception lists across the window. Wholesale-tagged units also listed on the Wholesale tab.</div>
+      </div>
+      <section class="block">
+        <h2>Slowest sold (by days-to-sale)</h2>
+        <div class="table-scroll"><table class="wide"><thead><tr>
+      <th>Stock</th><th>Type</th><th>Vehicle</th><th class="num">Sold</th>
+      <th class="num">DTS</th><th class="num">Age bucket</th>
+      <th class="num">Selling $</th><th class="num">Front</th><th class="num">Back</th>
+    </tr></thead><tbody><tr><td>25B173</td><td>New</td><td>2025 BMW i5<div class='muted'>M60</div></td><td class='num'>2026-06-30</td><td class='num'>462d</td><td class='num'>60+</td><td class='num'>$78,497</td><td class='num'>—</td><td class='num'>$0</td></tr><tr><td>25BT479</td><td>New</td><td>2025 BMW X5<div class='muted'>M60i</div></td><td class='num'>2026-04-15</td><td class='num'>417d</td><td class='num'>60+</td><td class='num'>$96,425</td><td class='num'>$0</td><td class='num'>$2,767</td></tr><tr><td>24BT799</td><td>New</td><td>2024 BMW X3<div class='muted'>sDrive30i</div></td><td class='num'>2025-09-16</td><td class='num'>348d</td><td class='num'>60+</td><td class='num'>$47,000</td><td class='num'>—</td><td class='num'>$737</td></tr><tr><td>25BT514</td><td>New</td><td>2025 BMW iX<div class='muted'>xDrive50</div></td><td class='num'>2026-02-03</td><td class='num'>328d</td><td class='num'>60+</td><td class='num'>$89,570</td><td class='num'>—</td><td class='num'>$1,379</td></tr><tr><td>24BT791</td><td>New</td><td>2024 BMW X3<div class='muted'>sDrive30i</div></td><td class='num'>2025-08-16</td><td class='num'>318d</td><td class='num'>60+</td><td class='num'>$49,100</td><td class='num'>—</td><td class='num'>$2,435</td></tr><tr><td>25BT451</td><td>New</td><td>2025 BMW X5<div class='muted'>M60i</div></td><td class='num'>2025-12-09</td><td class='num'>306d</td><td class='num'>60+</td><td class='num'>$108,178</td><td class='num'>$4,153</td><td class='num'>$7,656</td></tr><tr><td>25B171</td><td>New</td><td>2025 BMW M4<div class='muted'>Competition xDrive</div></td><td class='num'>2026-01-10</td><td class='num'>297d</td><td class='num'>60+</td><td class='num'>$94,856</td><td class='num'>—</td><td class='num'>$251</td></tr><tr><td>25B122</td><td>New</td><td>2025 BMW M4<div class='muted'>Competition xDrive</div></td><td class='num'>2025-10-31</td><td class='num'>296d</td><td class='num'>60+</td><td class='num'>$98,000</td><td class='num'>—</td><td class='num'>$1,728</td></tr><tr><td>26B064</td><td>New</td><td>2026 BMW 2 Series<div class='muted'>228</div></td><td class='num'>2026-06-13</td><td class='num'>267d</td><td class='num'>60+</td><td class='num'>$45,000</td><td class='num'>—</td><td class='num'>$0</td></tr><tr><td>26B085</td><td>New</td><td>2026 BMW 3 Series<div class='muted'>M340i NA</div></td><td class='num'>2026-06-16</td><td class='num'>238d</td><td class='num'>60+</td><td class='num'>$64,150</td><td class='num'>—</td><td class='num'>$293</td></tr><tr><td>26BT123</td><td>New</td><td>2026 BMW X3<div class='muted'>30 xDrive</div></td><td class='num'>2026-04-01</td><td class='num'>236d</td><td class='num'>60+</td><td class='num'>$51,000</td><td class='num'>—</td><td class='num'>$853</td></tr><tr><td>25B178</td><td>New</td><td>2025 BMW i7<div class='muted'>eDrive50</div></td><td class='num'>2025-11-22</td><td class='num'>233d</td><td class='num'>60+</td><td class='num'>$107,453</td><td class='num'>—</td><td class='num'>$0</td></tr><tr><td>26BT327</td><td>New</td><td>2026 BMW X5<div class='muted'>xDrive50e</div></td><td class='num'>2026-06-13</td><td class='num'>226d</td><td class='num'>60+</td><td class='num'>$76,349</td><td class='num'>—</td><td class='num'>$849</td></tr><tr><td>26BT226</td><td>New</td><td>2026 BMW X7<div class='muted'>xDrive40i</div></td><td class='num'>2026-05-04</td><td class='num'>224d</td><td class='num'>60+</td><td class='num'>$101,695</td><td class='num'>$3,854</td><td class='num'>$6,744</td></tr><tr><td>26BT339</td><td>New</td><td>2026 BMW X7<div class='muted'>xDrive40i</div></td><td class='num'>2026-06-03</td><td class='num'>210d</td><td class='num'>60+</td><td class='num'>$91,082</td><td class='num'>$4,007</td><td class='num'>$1,298</td></tr><tr><td>25B130</td><td>New</td><td>2025 BMW 3 Series<div class='muted'>330i</div></td><td class='num'>2025-08-16</td><td class='num'>207d</td><td class='num'>60+</td><td class='num'>$49,720</td><td class='num'>$1,100</td><td class='num'>$277</td></tr><tr><td>26BT406</td><td>New</td><td>2026 BMW X5<div class='muted'>xDrive50e</div></td><td class='num'>2026-07-16</td><td class='num'>206d</td><td class='num'>60+</td><td class='num'>$86,909</td><td class='num'>$3,614</td><td class='num'>$4,195</td></tr><tr><td>25BT591</td><td>New</td><td>2025 BMW X3<div class='muted'>30 xDrive</div></td><td class='num'>2025-11-21</td><td class='num'>200d</td><td class='num'>60+</td><td class='num'>$51,305</td><td class='num'>—</td><td class='num'>$7,243</td></tr><tr><td>26B067</td><td>New</td><td>2026 BMW 7 Series<div class='muted'>750e xDrive</div></td><td class='num'>2026-04-03</td><td class='num'>193d</td><td class='num'>60+</td><td class='num'>$110,650</td><td class='num'>—</td><td class='num'>$4,113</td></tr><tr><td>26BT408</td><td>New</td><td>2026 BMW X5<div class='muted'>xDrive50e</div></td><td class='num'>2026-07-04</td><td class='num'>190d</td><td class='num'>60+</td><td class='num'>$74,603</td><td class='num'>—</td><td class='num'>$0</td></tr></tbody></table></div>
+        <h3>Weakest front gross (where front present)</h3>
+        <div class="table-scroll"><table class="wide"><thead><tr>
+      <th>Stock</th><th>Type</th><th>Vehicle</th><th class="num">Sold</th>
+      <th class="num">DTS</th><th class="num">Age bucket</th>
+      <th class="num">Selling $</th><th class="num">Front</th><th class="num">Back</th>
+    </tr></thead><tbody><tr><td>25BT479</td><td>New</td><td>2025 BMW X5<div class='muted'>M60i</div></td><td class='num'>2026-04-15</td><td class='num'>417d</td><td class='num'>60+</td><td class='num'>$96,425</td><td class='num'>$0</td><td class='num'>$2,767</td></tr><tr><td>24B345L</td><td>CPO</td><td>2024 BMW 2 Series<div class='muted'>228i</div></td><td class='num'>2026-02-20</td><td class='num'>184d</td><td class='num'>60+</td><td class='num'>$32,990</td><td class='num'>$0</td><td class='num'>$3,717</td></tr><tr><td>25BT624</td><td>New</td><td>2025 BMW X3<div class='muted'>30 xDrive</div></td><td class='num'>2025-11-25</td><td class='num'>167d</td><td class='num'>60+</td><td class='num'>$56,120</td><td class='num'>$0</td><td class='num'>$5,010</td></tr><tr><td>24B363L</td><td>CPO</td><td>2024 BMW 2 Series<div class='muted'>228i</div></td><td class='num'>2025-11-28</td><td class='num'>160d</td><td class='num'>60+</td><td class='num'>$33,990</td><td class='num'>$0</td><td class='num'>$1,785</td></tr><tr><td>25BT432A</td><td>CPO</td><td>2025 BMW X5<div class='muted'>xDrive40i</div></td><td class='num'>2025-11-06</td><td class='num'>155d</td><td class='num'>60+</td><td class='num'>$60,989</td><td class='num'>$0</td><td class='num'>$7,994</td></tr><tr><td>26B048A</td><td>Used</td><td>2023 Cadillac XT6<div class='muted'>AWD Sport</div></td><td class='num'>2026-02-02</td><td class='num'>130d</td><td class='num'>60+</td><td class='num'>$38,740</td><td class='num'>$0</td><td class='num'>$5,152</td></tr><tr><td>25BT311L</td><td>CPO</td><td>2025 BMW X5<div class='muted'>xDrive50e</div></td><td class='num'>2025-12-31</td><td class='num'>118d</td><td class='num'>60+</td><td class='num'>$65,490</td><td class='num'>$0</td><td class='num'>$227</td></tr><tr><td>26BT032B</td><td>Used</td><td>2022 Volkswagen Atlas<div class='muted'>3.6L V6 SEL Premium R-Line</div></td><td class='num'>2025-12-13</td><td class='num'>116d</td><td class='num'>60+</td><td class='num'>$26,490</td><td class='num'>$0</td><td class='num'>$0</td></tr><tr><td>25BT625A</td><td>Used</td><td>2020 Nissan Armada<div class='muted'>Platinum</div></td><td class='num'>2025-12-17</td><td class='num'>106d</td><td class='num'>60+</td><td class='num'>$24,990</td><td class='num'>$0</td><td class='num'>$2,960</td></tr><tr><td>24B347M</td><td>Used</td><td>2023 Mazda MX-5 Miata RF<div class='muted'>Grand Touring</div></td><td class='num'>2026-01-12</td><td class='num'>104d</td><td class='num'>60+</td><td class='num'>$23,740</td><td class='num'>$0</td><td class='num'>$0</td></tr><tr><td>25BT484L</td><td>CPO</td><td>2025 BMW X3<div class='muted'>30 xDrive</div></td><td class='num'>2026-04-04</td><td class='num'>103d</td><td class='num'>60+</td><td class='num'>$47,990</td><td class='num'>$0</td><td class='num'>$329</td></tr><tr><td>25BT604A</td><td>CPO</td><td>2025 BMW X3<div class='muted'>30 xDrive</div></td><td class='num'>2025-11-17</td><td class='num'>94d</td><td class='num'>60+</td><td class='num'>$44,990</td><td class='num'>$0</td><td class='num'>$0</td></tr><tr><td>25B102L</td><td>CPO</td><td>2025 BMW 3 Series<div class='muted'>330i</div></td><td class='num'>2025-11-20</td><td class='num'>94d</td><td class='num'>60+</td><td class='num'>$42,990</td><td class='num'>$0</td><td class='num'>$1,362</td></tr><tr><td>PBL837</td><td>CPO</td><td>2023 BMW 3 Series<div class='muted'>330i</div></td><td class='num'>2026-04-03</td><td class='num'>92d</td><td class='num'>60+</td><td class='num'>$30,247</td><td class='num'>$0</td><td class='num'>$3,000</td></tr><tr><td>25BT604</td><td>New</td><td>2025 BMW X3<div class='muted'>30 xDrive</div></td><td class='num'>2025-08-14</td><td class='num'>86d</td><td class='num'>60+</td><td class='num'>$49,480</td><td class='num'>$0</td><td class='num'>$3,369</td></tr><tr><td>26B060A</td><td>Used</td><td>2020 BMW 2 Series<div class='muted'>228i xDrive</div></td><td class='num'>2026-02-02</td><td class='num'>84d</td><td class='num'>60+</td><td class='num'>$21,490</td><td class='num'>$0</td><td class='num'>$222</td></tr><tr><td>25B148B</td><td>Used</td><td>2024 Ford Bronco<div class='muted'>Badlands</div></td><td class='num'>2025-12-10</td><td class='num'>83d</td><td class='num'>60+</td><td class='num'>$47,491</td><td class='num'>$0</td><td class='num'>$0</td></tr><tr><td>PBA147</td><td>Used</td><td>2023 BMW X3<div class='muted'>sDrive30i</div></td><td class='num'>2026-06-17</td><td class='num'>75d</td><td class='num'>60+</td><td class='num'>$30,639</td><td class='num'>$0</td><td class='num'>$0</td></tr><tr><td>25B130A</td><td>Used</td><td>2023 BMW i4<div class='muted'>M50</div></td><td class='num'>2025-10-30</td><td class='num'>72d</td><td class='num'>60+</td><td class='num'>$42,500</td><td class='num'>$0</td><td class='num'>$0</td></tr><tr><td>26BT221B</td><td>Used</td><td>2023 Jeep Grand Cherokee 4xe<div class='muted'>Summit Reserve</div></td><td class='num'>2026-01-29</td><td class='num'>68d</td><td class='num'>60+</td><td class='num'>$34,990</td><td class='num'>$0</td><td class='num'>$0</td></tr></tbody></table></div>
+        <h3>Best front per day on lot</h3>
+        <p class="webline">Front ÷ DTS among units with front and DTS &gt; 0. Efficiency lens, not volume lens.</p>
+        <div class="table-scroll"><table class="wide"><thead><tr>
+      <th>Stock</th><th>Type</th><th>Vehicle</th><th class="num">Sold</th>
+      <th class="num">DTS</th><th class="num">Age bucket</th>
+      <th class="num">Selling $</th><th class="num">Front</th><th class="num">Back</th>
+    </tr></thead><tbody><tr><td>27BT013</td><td>New</td><td>2027 BMW X6<div class='muted'>xDrive40i</div></td><td class='num'>2026-05-29</td><td class='num'>1d</td><td class='num'>0-15</td><td class='num'>$92,600</td><td class='num'>$6,480</td><td class='num'>$1,167</td></tr><tr><td>27BT001</td><td>New</td><td>2027 BMW<div class='muted'></div></td><td class='num'>2026-04-04</td><td class='num'>1d</td><td class='num'>0-15</td><td class='num'>$93,050</td><td class='num'>$5,335</td><td class='num'>$3,423</td></tr><tr><td>27BT025</td><td>New</td><td>2027 BMW X7<div class='muted'>xDrive40i</div></td><td class='num'>2026-06-19</td><td class='num'>1d</td><td class='num'>0-15</td><td class='num'>$100,975</td><td class='num'>$5,140</td><td class='num'>$291</td></tr><tr><td>26B242</td><td>New</td><td>2026 BMW M2<div class='muted'>Base</div></td><td class='num'>2026-07-18</td><td class='num'>1d</td><td class='num'>0-15</td><td class='num'>$78,340</td><td class='num'>$4,320</td><td class='num'>$5,889</td></tr><tr><td>26BT290A</td><td>Used</td><td>2022 BMW X6<div class='muted'>xDrive40i</div></td><td class='num'>2026-01-15</td><td class='num'>2d</td><td class='num'>0-15</td><td class='num'>$43,989</td><td class='num'>$8,604</td><td class='num'>$1,453</td></tr><tr><td>25B237</td><td>New</td><td>2025 BMW i4<div class='muted'>eDrive40</div></td><td class='num'>2025-08-27</td><td class='num'>1d</td><td class='num'>0-15</td><td class='num'>$63,775</td><td class='num'>$3,640</td><td class='num'>$204</td></tr><tr><td>26B179A</td><td>Used</td><td>2022 Honda Civic Hatchback<div class='muted'>Sport Touring</div></td><td class='num'>2026-06-05</td><td class='num'>1d</td><td class='num'>46-60</td><td class='num'>$24,968</td><td class='num'>$3,381</td><td class='num'>$669</td></tr><tr><td>26B231</td><td>New</td><td>2026 BMW M2<div class='muted'>CS</div></td><td class='num'>2026-06-03</td><td class='num'>2d</td><td class='num'>0-15</td><td class='num'>$112,165</td><td class='num'>$6,589</td><td class='num'>$8,672</td></tr><tr><td>26B068L</td><td>Used</td><td>2026 BMW 7 Series<div class='muted'>750e xDrive</div></td><td class='num'>2026-07-16</td><td class='num'>4d</td><td class='num'>60+</td><td class='num'>$109,876</td><td class='num'>$12,215</td><td class='num'>$5,701</td></tr><tr><td>24B241L</td><td>CPO</td><td>2024 BMW 8 Series<div class='muted'>840i</div></td><td class='num'>2025-09-11</td><td class='num'>1d</td><td class='num'>60+</td><td class='num'>$72,490</td><td class='num'>$2,505</td><td class='num'>$2,328</td></tr><tr><td>PBL857</td><td>CPO</td><td>2023 BMW 4 Series<div class='muted'>430i</div></td><td class='num'>2026-05-21</td><td class='num'>3d</td><td class='num'>60+</td><td class='num'>$37,990</td><td class='num'>$7,258</td><td class='num'>$4,286</td></tr><tr><td>25B247A</td><td>CPO</td><td>2024 BMW X7<div class='muted'>xDrive40i</div></td><td class='num'>2025-10-06</td><td class='num'>3d</td><td class='num'>0-15</td><td class='num'>$74,990</td><td class='num'>$7,165</td><td class='num'>$0</td></tr><tr><td>25B231A</td><td>Used</td><td>2023 BMW X5<div class='muted'>sDrive40i</div></td><td class='num'>2025-08-11</td><td class='num'>5d</td><td class='num'>0-15</td><td class='num'>$58,990</td><td class='num'>$11,822</td><td class='num'>$0</td></tr><tr><td>26BT493</td><td>New</td><td>2026 BMW X3<div class='muted'>M50 xDrive</div></td><td class='num'>2026-03-07</td><td class='num'>2d</td><td class='num'>0-15</td><td class='num'>$76,500</td><td class='num'>$4,615</td><td class='num'>$4,048</td></tr><tr><td>26BT350A</td><td>Used</td><td>2023 Chevrolet Trailblazer<div class='muted'>RS</div></td><td class='num'>2026-02-04</td><td class='num'>2d</td><td class='num'>0-15</td><td class='num'>$20,990</td><td class='num'>$4,607</td><td class='num'>$1,400</td></tr><tr><td>25B238</td><td>New</td><td>2025 BMW 4 Series<div class='muted'>M440i xDrive</div></td><td class='num'>2025-08-30</td><td class='num'>2d</td><td class='num'>0-15</td><td class='num'>$73,867</td><td class='num'>$4,513</td><td class='num'>$0</td></tr><tr><td>27BT002</td><td>New</td><td>2027 BMW X6<div class='muted'>xDrive40i</div></td><td class='num'>2026-05-01</td><td class='num'>2d</td><td class='num'>0-15</td><td class='num'>$94,075</td><td class='num'>$4,380</td><td class='num'>$0</td></tr><tr><td>26BT109A</td><td>CPO</td><td>2023 BMW X5<div class='muted'>sDrive40i</div></td><td class='num'>2025-08-30</td><td class='num'>3d</td><td class='num'>0-15</td><td class='num'>$51,500</td><td class='num'>$6,099</td><td class='num'>$150</td></tr><tr><td>26B225</td><td>New</td><td>2026 BMW 7 Series<div class='muted'>740i xDrive</div></td><td class='num'>2026-05-15</td><td class='num'>4d</td><td class='num'>0-15</td><td class='num'>$116,440</td><td class='num'>$7,985</td><td class='num'>$4,034</td></tr><tr><td>25B247</td><td>New</td><td>2025 BMW 7 Series<div class='muted'>740i</div></td><td class='num'>2025-10-01</td><td class='num'>2d</td><td class='num'>0-15</td><td class='num'>$111,575</td><td class='num'>$3,899</td><td class='num'>$3,221</td></tr></tbody></table></div>
+      </section>
+    </section>
+
+    <footer>
+      BHBMW Annual Inventory · Brian Harris BMW · Window Aug 1, 2025 – Jul 24, 2026 · Generated 2026-07-27 14:13 ·
+      Source: Motosnap / VinSolutions annual sold extract + Active lot snapshot ·
+      Defaults: trailing 12 complete months · full exit picture · retail/wholesale always labeled & separable · New/Used/CPO split · no invented book/invoice ·
+      Single-store manager pack · not a multi-store hub · beta internal only.
+      Customer PII not included. Companion to GM Weekly (leads), not a replacement.
+    </footer>
+  </div>
+
+<script>
+(function(){
+  const buttons=[...document.querySelectorAll('.stage-tabs button')];
+  const panels=[...document.querySelectorAll('.panel')];
+  function act(id){
+    buttons.forEach(b=>b.classList.toggle('active', b.dataset.tab===id));
+    panels.forEach(p=>p.classList.toggle('active', p.id==='tab-'+id));
+    try { history.replaceState(null,'','#'+id); } catch(e) {}
+  }
+  buttons.forEach(b=>b.addEventListener('click',()=>act(b.dataset.tab)));
+  const hash=(location.hash||'#overview').replace('#','');
+  if(buttons.some(b=>b.dataset.tab===hash)) act(hash);
+})();
+</script>
+</body>
+</html>
