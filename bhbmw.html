@@ -134,7 +134,7 @@ footer {
 <body>
   <div class="top top has-photo">
     <div class="inner">
-      <div class="brand">The Cooperative Agency · Internal manager pack · beta</div>
+      <div class="brand">The Cooperative Agency · Manager pack · beta</div>
       <h1>BHBMW Annual Inventory</h1>
       <div class="sub">
         Holistic inventory management for GM, New Car, and Used Car desks —
@@ -143,7 +143,7 @@ footer {
       <div class="meta">
         Brian Harris BMW · VinSolutions sold history · Window <strong>Aug 1, 2025 – Jul 24, 2026</strong>
         · Trailing 12 complete months through last sold date
-        · Generated 2026-07-27 14:13
+        · Generated 2026-07-30 14:25
       </div>
     </div>
   </div>
@@ -151,7 +151,7 @@ footer {
   <div class="wrap">
     <div class="verdict">
       <h2>Window verdict</h2>
-      <ol><li><strong>1,201 units exited</strong> in the trailing 12 months — <strong>1,201 retail</strong> · <strong>0 wholesale</strong> (always labeled so the desk can separate them).</li><li>Type mix (all exits) — New 577 · Used 377 · CPO 247.</li><li>Median days-to-sale <strong>33d</strong> (avg 48d) · <strong>28%</strong> sold after day 60.</li><li>Avg selling price $55,548 · avg front $3,359 (front fill 78%) · avg back $1,885.</li><li>New front fill is <strong>59%</strong> — New front averages are caveated until the feed is complete.</li><li>Lot now: <strong>301 Active</strong>, median age 55d.</li><li>Lot mismatch example: <strong>X3</strong> — 49 on ground now; history med DTS 59d on 153 sold.</li></ol>
+      <ol><li><strong>1,201 units sold</strong> in the trailing window (New 577 · Used 377 · CPO 247).</li><li>Median days-to-sale <strong>33d</strong> (avg 48d) · <strong>28%</strong> sold after day 60.</li><li>Avg selling price $55,548 · avg front $3,359 (front fill 78%) · avg back $1,885.</li><li>New front fill is <strong>59%</strong> — New front averages are caveated until the feed is complete.</li><li>Lot now: <strong>301 Active</strong>, median age 55d.</li><li>Lot mismatch example: <strong>X3</strong> — 49 on ground now; history med DTS 59d on 153 sold.</li></ol>
     </div>
 
     <div class="stage-tabs-wrap">
@@ -161,9 +161,8 @@ footer {
         <button type="button" data-tab="used" role="tab"><span class="tn">03</span><span class="tl">Used &amp; CPO</span></button>
         <button type="button" data-tab="velocity" role="tab"><span class="tn">04</span><span class="tl">Velocity</span></button>
         <button type="button" data-tab="economics" role="tab"><span class="tn">05</span><span class="tl">Economics</span></button>
-        <button type="button" data-tab="wholesale" role="tab"><span class="tn">06</span><span class="tl">Wholesale</span></button>
-        <button type="button" data-tab="lot" role="tab"><span class="tn">07</span><span class="tl">Lot now</span></button>
-        <button type="button" data-tab="units" role="tab"><span class="tn">08</span><span class="tl">Exceptions</span></button>
+        <button type="button" data-tab="lot" role="tab"><span class="tn">06</span><span class="tl">Lot now</span></button>
+        <button type="button" data-tab="units" role="tab"><span class="tn">07</span><span class="tl">Exceptions</span></button>
       </div>
     </div>
 
@@ -176,71 +175,39 @@ footer {
       </div>
 
       <section class="block">
-        <h2>Scoreboard — last 12 months</h2>
-        <div class="when">All inventory exits · de-duped by VIN · source file bhbmw-annual-inventory-latest.csv · 1,315 rows in → 1,201 unique (1,201 retail · 0 wholesale)</div>
+        <h2>Scoreboard</h2>
+        <div class="when">Sold units · de-duped by VIN · source file bhbmw-annual-inventory-latest.csv · 1,315 rows in → 1,201 unique sold in window</div>
         <div class="why"><strong>What this means</strong>
-          This is the <strong>full last-12 inventory exit picture</strong> for the store.
-          <strong>Retail and wholesale stay labeled and separable</strong> (split table, monthly columns, Wholesale tab) so the GM can see what left retail vs what was wholesaled — without losing the combined machine view.
-          Live ground stock is on <strong>Lot now</strong>. Front averages only use rows where front is populated.
+          This pack is sold inventory from VinSolutions (Motosnap annual extract). Live ground stock is on the Lot now tab. Front gross averages only use rows where front is populated — fill rate is shown next to every front number.
         </div>
         <div class="stat-grid">
-          <div class="stat"><div class="k">All exits</div><div class="v">1,201</div><div class="s">Aug 1, 2025 – Jul 24, 2026</div></div>
-          <div class="stat"><div class="k">Retail</div><div class="v">1,201</div><div class="s">100% of exits</div></div>
-          <div class="stat"><div class="k">Wholesale</div><div class="v">0</div><div class="s">0% · detail on Wholesale tab</div></div>
-          <div class="stat"><div class="k">Med DTS (all)</div><div class="v">33d</div><div class="s">Avg 48d</div></div>
-          <div class="stat"><div class="k">&gt;60 days (all)</div><div class="v">28%</div><div class="s">Share of all exits</div></div>
-          <div class="stat"><div class="k">Avg front (all)</div><div class="v">$3,359</div><div class="s">Fill 78%</div></div>
+          <div class="stat"><div class="k">Units sold</div><div class="v">1,201</div><div class="s">Aug 1, 2025 – Jul 24, 2026</div></div>
+          <div class="stat"><div class="k">Median DTS</div><div class="v">33d</div><div class="s">Avg 48d</div></div>
+          <div class="stat"><div class="k">Sold &gt;60 days</div><div class="v">28%</div><div class="s">Share of sold units</div></div>
+          <div class="stat"><div class="k">Avg selling $</div><div class="v">$55,548</div><div class="s">All types</div></div>
+          <div class="stat"><div class="k">Avg front</div><div class="v">$3,359</div><div class="s">Fill 78%</div></div>
+          <div class="stat"><div class="k">Avg back</div><div class="v">$1,885</div><div class="s">Includes $0 backs</div></div>
         </div>
 
-        <h3>Exit channel split</h3>
-        <div class="table-scroll"><table class="wide">
-        <thead><tr>
-          <th>Channel</th><th class="num">Units</th><th class="num">Share of sold file</th>
-          <th class="num">Med DTS</th><th class="num">Avg SP</th><th class="num">Avg front</th><th class="num">Sum SP</th>
-        </tr></thead>
-        <tbody>
-          <tr><td><strong>Retail</strong></td>
-            <td class="num">1,201</td>
-            <td class="num">100%</td>
-            <td class="num">33d</td>
-            <td class="num">$55,548</td>
-            <td class="num">$3,359</td>
-            <td class="num">$66,713,363</td></tr>
-          <tr><td><strong>Wholesale</strong></td>
-            <td class="num">0</td>
-            <td class="num">0%</td>
-            <td class="num">—</td>
-            <td class="num">—</td>
-            <td class="num">—</td>
-            <td class="num">$0</td></tr>
-          <tr class="total-row"><td>All exits in file</td>
-            <td class="num">1,201</td>
-            <td class="num">100%</td>
-            <td class="num">—</td><td class="num">—</td><td class="num">—</td>
-            <td class="num">$66,713,363</td></tr>
-        </tbody></table></div>
-        <p class="webline">Retail vs wholesale stays labeled so the GM can separate them. Wholesale is thin/empty on this VinSolutions (Motosnap) inventory extract — that is expected. Authoritative wholesale/auction/dealer-trade exits will come from a CDK DMS export once scheduled; until then treat wholesale counts here as incomplete, not proof the store wholesaled zero.</p>
-
-        <h3>New · Used · CPO (all exits)</h3>
+        <h3>New · Used · CPO</h3>
         <div class="table-scroll"><table class="wide">
         <thead><tr>
           <th>Type</th><th class="num">Units</th><th class="num">Mix</th><th class="num">Med DTS</th>
           <th class="num">&gt;60d</th><th class="num">Avg SP</th><th class="num">Avg front</th><th class="num">Avg back</th>
-        </tr></thead><tbody><tr><td><strong>New</strong></td><td class='num'>577</td><td class='num'>48%</td><td class='num'>39d</td><td class='num'>34%</td><td class='num'>$73,103</td><td class='num'>$2,814<div class='muted'>fill 59% · n=341</div></td><td class='num'>$2,042</td></tr><tr><td><strong>Used</strong></td><td class='num'>377</td><td class='num'>31%</td><td class='num'>30d</td><td class='num'>23%</td><td class='num'>$30,892</td><td class='num'>$3,815<div class='muted'>fill 97% · n=367</div></td><td class='num'>$1,430</td></tr><tr><td><strong>CPO</strong></td><td class='num'>247</td><td class='num'>21%</td><td class='num'>30d</td><td class='num'>20%</td><td class='num'>$52,173</td><td class='num'>$3,440<div class='muted'>fill 93% · n=230</div></td><td class='num'>$2,213</td></tr><tr class='total-row'><td>All exits</td><td class='num'>1,201</td><td class='num'>100%</td><td class='num'>33d</td><td class='num'>28%</td><td class='num'>$55,548</td><td class='num'>$3,359<div class='muted'>fill 78%</div></td><td class='num'>$1,885</td></tr></tbody></table></div>
+        </tr></thead><tbody><tr><td><strong>New</strong></td><td class='num'>577</td><td class='num'>48%</td><td class='num'>39d</td><td class='num'>34%</td><td class='num'>$73,103</td><td class='num'>$2,814<div class='muted'>fill 59% · n=341</div></td><td class='num'>$2,042</td></tr><tr><td><strong>Used</strong></td><td class='num'>377</td><td class='num'>31%</td><td class='num'>30d</td><td class='num'>23%</td><td class='num'>$30,892</td><td class='num'>$3,815<div class='muted'>fill 97% · n=367</div></td><td class='num'>$1,430</td></tr><tr><td><strong>CPO</strong></td><td class='num'>247</td><td class='num'>21%</td><td class='num'>30d</td><td class='num'>20%</td><td class='num'>$52,173</td><td class='num'>$3,440<div class='muted'>fill 93% · n=230</div></td><td class='num'>$2,213</td></tr><tr class='total-row'><td>Store</td><td class='num'>1,201</td><td class='num'>100%</td><td class='num'>33d</td><td class='num'>28%</td><td class='num'>$55,548</td><td class='num'>$3,359<div class='muted'>fill 78%</div></td><td class='num'>$1,885</td></tr></tbody></table></div>
 
-        <h3>Monthly exits — total with retail / wholesale</h3>
+        <h3>Monthly volume</h3>
         <div class="table-scroll"><table class="wide">
         <thead><tr>
-          <th>Month</th><th class="num">Total</th><th class="num">Retail</th><th class="num">Wholesale</th>
-          <th class="num">New</th><th class="num">Used</th>
+          <th>Month</th><th class="num">Sold</th><th class="num">New</th><th class="num">Used</th>
           <th class="num">CPO</th><th class="num">&gt;60d</th><th class="num">&gt;60d share</th>
-        </tr></thead><tbody><tr><td>Aug 2025</td><td class='num'>124</td><td class='num'>124</td><td class='num'>0</td><td class='num'>58</td><td class='num'>42</td><td class='num'>24</td><td class='num'>29</td><td class='num'>23%</td></tr><tr><td>Sep 2025</td><td class='num'>84</td><td class='num'>84</td><td class='num'>0</td><td class='num'>37</td><td class='num'>37</td><td class='num'>10</td><td class='num'>18</td><td class='num'>21%</td></tr><tr><td>Oct 2025</td><td class='num'>112</td><td class='num'>112</td><td class='num'>0</td><td class='num'>51</td><td class='num'>42</td><td class='num'>19</td><td class='num'>23</td><td class='num'>21%</td></tr><tr><td>Nov 2025</td><td class='num'>102</td><td class='num'>102</td><td class='num'>0</td><td class='num'>55</td><td class='num'>27</td><td class='num'>20</td><td class='num'>34</td><td class='num'>33%</td></tr><tr><td>Dec 2025</td><td class='num'>113</td><td class='num'>113</td><td class='num'>0</td><td class='num'>59</td><td class='num'>27</td><td class='num'>27</td><td class='num'>38</td><td class='num'>34%</td></tr><tr><td>Jan 2026</td><td class='num'>95</td><td class='num'>95</td><td class='num'>0</td><td class='num'>43</td><td class='num'>31</td><td class='num'>21</td><td class='num'>27</td><td class='num'>28%</td></tr><tr><td>Feb 2026</td><td class='num'>76</td><td class='num'>76</td><td class='num'>0</td><td class='num'>37</td><td class='num'>28</td><td class='num'>11</td><td class='num'>30</td><td class='num'>39%</td></tr><tr><td>Mar 2026</td><td class='num'>114</td><td class='num'>114</td><td class='num'>0</td><td class='num'>56</td><td class='num'>29</td><td class='num'>29</td><td class='num'>39</td><td class='num'>34%</td></tr><tr><td>Apr 2026</td><td class='num'>114</td><td class='num'>114</td><td class='num'>0</td><td class='num'>49</td><td class='num'>33</td><td class='num'>32</td><td class='num'>29</td><td class='num'>25%</td></tr><tr><td>May 2026</td><td class='num'>84</td><td class='num'>84</td><td class='num'>0</td><td class='num'>36</td><td class='num'>31</td><td class='num'>17</td><td class='num'>15</td><td class='num'>18%</td></tr><tr><td>Jun 2026</td><td class='num'>101</td><td class='num'>101</td><td class='num'>0</td><td class='num'>48</td><td class='num'>30</td><td class='num'>23</td><td class='num'>27</td><td class='num'>27%</td></tr><tr><td>Jul 2026</td><td class='num'>82</td><td class='num'>82</td><td class='num'>0</td><td class='num'>48</td><td class='num'>20</td><td class='num'>14</td><td class='num'>25</td><td class='num'>30%</td></tr><tr class='total-row'><td>Window total</td><td class='num'>1,201</td><td class='num'>1,201</td><td class='num'>0</td><td class='num'>577</td><td class='num'>377</td><td class='num'>247</td><td class='num'>334</td><td class='num'>28%</td></tr></tbody></table></div>
+        </tr></thead><tbody><tr><td>Aug 2025</td><td class='num'>124</td><td class='num'>58</td><td class='num'>42</td><td class='num'>24</td><td class='num'>29</td><td class='num'>23%</td></tr><tr><td>Sep 2025</td><td class='num'>84</td><td class='num'>37</td><td class='num'>37</td><td class='num'>10</td><td class='num'>18</td><td class='num'>21%</td></tr><tr><td>Oct 2025</td><td class='num'>112</td><td class='num'>51</td><td class='num'>42</td><td class='num'>19</td><td class='num'>23</td><td class='num'>21%</td></tr><tr><td>Nov 2025</td><td class='num'>102</td><td class='num'>55</td><td class='num'>27</td><td class='num'>20</td><td class='num'>34</td><td class='num'>33%</td></tr><tr><td>Dec 2025</td><td class='num'>113</td><td class='num'>59</td><td class='num'>27</td><td class='num'>27</td><td class='num'>38</td><td class='num'>34%</td></tr><tr><td>Jan 2026</td><td class='num'>95</td><td class='num'>43</td><td class='num'>31</td><td class='num'>21</td><td class='num'>27</td><td class='num'>28%</td></tr><tr><td>Feb 2026</td><td class='num'>76</td><td class='num'>37</td><td class='num'>28</td><td class='num'>11</td><td class='num'>30</td><td class='num'>39%</td></tr><tr><td>Mar 2026</td><td class='num'>114</td><td class='num'>56</td><td class='num'>29</td><td class='num'>29</td><td class='num'>39</td><td class='num'>34%</td></tr><tr><td>Apr 2026</td><td class='num'>114</td><td class='num'>49</td><td class='num'>33</td><td class='num'>32</td><td class='num'>29</td><td class='num'>25%</td></tr><tr><td>May 2026</td><td class='num'>84</td><td class='num'>36</td><td class='num'>31</td><td class='num'>17</td><td class='num'>15</td><td class='num'>18%</td></tr><tr><td>Jun 2026</td><td class='num'>101</td><td class='num'>48</td><td class='num'>30</td><td class='num'>23</td><td class='num'>27</td><td class='num'>27%</td></tr><tr><td>Jul 2026</td><td class='num'>82</td><td class='num'>48</td><td class='num'>20</td><td class='num'>14</td><td class='num'>25</td><td class='num'>30%</td></tr><tr class='total-row'><td>Window total</td><td class='num'>1,201</td><td class='num'>577</td><td class='num'>377</td><td class='num'>247</td><td class='num'>334</td><td class='num'>28%</td></tr></tbody></table></div>
       </section>
 
       <section class="block">
         <h2>Stocking implications</h2>
         <div class="when">Factual defaults from this window — starting point for Brett / New / Used desk conversation</div>
-        <ul class="impl"><li>Last-12 inventory picture includes every exit in the file, with retail vs wholesale always labeled. Wholesale tagged in this Motosnap extract: 0 — add Sale/Exit Type (or wholesale sold export) so the desk can see what left via wholesale/auction.</li><li>28% of units sold in-window left the lot after day 60 — aging is a first-class operating issue, not a tail anecdote.</li><li>Front gross averages $3,722 in the 0–15 day sold bucket vs $2,670 at 60+ ($1,052 softer when metal ages out).</li><li>New front gross is only populated on 59% of New sold rows — treat New avg front as directional and fix the export/DMS map before using it for desk contests.</li><li>New watch: 8 Series — 8 sold, median days-to-sale 88d, 75% over 60 days, avg front $6,014 (n=6).</li><li>Used avg front ($3,815, fill 97%) beats New avg front ($2,814, fill 59%) — acquisition quality is carrying deal gross while New front is compressed or under-reported.</li><li>Active lot now: 301 units, median age 55d (New 170 · Used 75 · CPO 56). Compare Lot now tab to historically slow models before the next order/appraisal meeting.</li></ul>
+        <ul class="impl"><li>28% of units sold in-window left the lot after day 60 — aging is a first-class operating issue, not a tail anecdote.</li><li>Front gross averages $3,722 in the 0–15 day sold bucket vs $2,670 at 60+ ($1,052 softer when metal ages out).</li><li>New front gross is only populated on 59% of New sold rows — treat New avg front as directional and fix the export/DMS map before using it for desk contests.</li><li>New watch: 8 Series — 8 sold, median days-to-sale 88d, 75% over 60 days, avg front $6,014 (n=6).</li><li>Used avg front ($3,815, fill 97%) beats New avg front ($2,814, fill 59%) — acquisition quality is carrying deal gross while New front is compressed or under-reported.</li><li>Active lot now: 301 units, median age 55d (New 170 · Used 75 · CPO 56). Compare Lot now tab to historically slow models before the next order/appraisal meeting.</li></ul>
       </section>
     </section>
 
@@ -249,7 +216,7 @@ footer {
       <div class="funnel-stage">
         <div class="n">New car desk</div>
         <div class="t">New vehicle sold performance</div>
-        <div class="d">New exits in the window. Wholesale New (if any) also appears on the Wholesale tab for a clean look at auction/dealer dumps.</div>
+        <div class="d">Model velocity, age at sale, front honesty, color concentration, order pressure.</div>
       </div>
       <section class="block">
         <h2>New — window</h2>
@@ -287,7 +254,7 @@ footer {
       <div class="funnel-stage">
         <div class="n">Used car desk</div>
         <div class="t">Used &amp; CPO sold performance</div>
-        <div class="d">Used &amp; CPO exits in the window. Use Wholesale tab to isolate auction/dealer-trade used exits when tagged.</div>
+        <div class="d">Acquisition economics, turn, readiness (photo/Carfax), CPO vs straight used — never blended.</div>
       </div>
       <section class="block">
         <h2>Used vs CPO</h2>
@@ -357,14 +324,14 @@ footer {
       <div class="funnel-stage">
         <div class="n">Deal economics</div>
         <div class="t">Price, cost, front, back</div>
-        <div class="d">Deal economics on all exits by type. Pair with the channel split / Wholesale tab to separate retail vs wholesale dollars. Invoice/book empty — omitted.</div>
+        <div class="d">Contribution by type with honest denominators. Invoice/book fields empty in this feed — omitted on purpose.</div>
       </div>
       <section class="block">
         <h2>Gross contribution by type</h2>
         <div class="when">Selling price · cost · front (non-blank only) · back (zeros kept)</div>
         <div class="why"><strong>What this means</strong>
           Sum front is only over rows with front present — it understates true total front if fill is incomplete (especially New).
-          Back sums include $0. Invoice / KBB / NADA / wholesale book columns were empty in the Motosnap annual extract and are not shown.
+          Back sums include $0. Empty invoice/book columns are not shown.
         </div>
         <div class="table-scroll"><table class="wide">
         <thead><tr>
@@ -379,55 +346,6 @@ footer {
       </section>
     </section>
 
-
-    <!-- WHOLESALE -->
-    <section class="panel" id="tab-wholesale">
-      <div class="funnel-stage">
-        <div class="n">Wholesale / auction / dealer exits</div>
-        <div class="t">What we wholesaled — isolatable view</div>
-        <div class="d">Auction, OPENLANE, dealer trade, and other non-retail dispositions when the feed tags them.</div>
-      </div>
-      <section class="block">
-        <h2>Wholesale exits</h2>
-        <div class="when">0 wholesale · 1,201 retail · 1,201 all exits in window</div>
-        <div class="why"><strong>What this means</strong>
-          Retail vs wholesale stays labeled so the GM can separate them. Wholesale is thin/empty on this VinSolutions (Motosnap) inventory extract — that is expected. Authoritative wholesale/auction/dealer-trade exits will come from a CDK DMS export once scheduled; until then treat wholesale counts here as incomplete, not proof the store wholesaled zero.
-          This tab isolates wholesale/auction/dealer-trade exits so the GM can study that lane clearly. Store overview totals still include these units in the last-12 picture — they are labeled, not hidden.
-        </div>
-        <div class="stat-grid">
-          <div class="stat"><div class="k">Wholesale units</div><div class="v">0</div><div class="s">Tagged exits</div></div>
-          <div class="stat"><div class="k">Retail units</div><div class="v">1,201</div><div class="s">Rest of last-12 picture</div></div>
-          <div class="stat"><div class="k">Wholesale med DTS</div><div class="v">—</div><div class="s">Avg —</div></div>
-          <div class="stat"><div class="k">Wholesale avg SP</div><div class="v">—</div><div class="s">Exit price</div></div>
-          <div class="stat"><div class="k">Wholesale avg front</div><div class="v">—</div><div class="s">Fill —</div></div>
-          <div class="stat"><div class="k">Wholesale sum SP</div><div class="v">$0</div><div class="s">Window total</div></div>
-        </div>
-
-        <h3>Wholesale by New / Used / CPO</h3>
-        <div class="table-scroll"><table class="wide">
-        <thead><tr>
-          <th>Type</th><th class="num">Units</th><th class="num">Mix</th><th class="num">Med DTS</th>
-          <th class="num">Avg SP</th><th class="num">Avg front</th><th class="num">Avg back</th>
-        </tr></thead>
-        <tbody><tr><td colspan='7'>No wholesale units tagged in this extract.</td></tr></tbody></table></div>
-
-        <h3>Wholesale outlet / label</h3>
-        <div class="table-scroll"><table>
-        <thead><tr><th>Label</th><th class="num">Units</th></tr></thead>
-        <tbody><tr><td colspan='2'>None tagged — add Motosnap Sale Type / Exit Type or a wholesale sold report.</td></tr></tbody></table></div>
-
-        <h3>Wholesale model mix</h3>
-        <div class="table-scroll"><table class="wide">
-        <thead><tr>
-          <th>Model</th><th class="num">Sold</th><th class="num">Med DTS</th><th class="num">Avg DTS</th>
-          <th class="num">&gt;60</th><th class="num">&gt;60%</th><th class="num">Avg SP</th><th class="num">Avg front</th>
-        </tr></thead>
-        <tbody><tr><td colspan='8'>No wholesale model rows.</td></tr></tbody></table></div>
-
-        <h3>Recent wholesale units</h3>
-        <div class="table-scroll"><table class="wide"><thead><tr><th>Stock</th><th>Type</th><th>Channel</th><th>Vehicle</th><th class="num">Sold</th><th class="num">DTS</th><th class="num">Age bucket</th><th class="num">Selling $</th><th class="num">Front</th><th class="num">Back</th></tr></thead><tbody><tr><td colspan='10'>No wholesale unit rows in file.</td></tr></tbody></table></div>
-      </section>
-    </section>
 
     <!-- LOT NOW -->
     <section class="panel" id="tab-lot">
@@ -498,7 +416,7 @@ footer {
       <div class="funnel-stage">
         <div class="n">Unit lists</div>
         <div class="t">Exceptions worth a desk conversation</div>
-        <div class="d">Exception lists across the window. Wholesale-tagged units also listed on the Wholesale tab.</div>
+        <div class="d">Slowest sold, weakest front, best front-per-day — not the full ledger.</div>
       </div>
       <section class="block">
         <h2>Slowest sold (by days-to-sale)</h2>
@@ -524,9 +442,9 @@ footer {
     </section>
 
     <footer>
-      BHBMW Annual Inventory · Brian Harris BMW · Window Aug 1, 2025 – Jul 24, 2026 · Generated 2026-07-27 14:13 ·
+      BHBMW Annual Inventory · Brian Harris BMW · Window Aug 1, 2025 – Jul 24, 2026 · Generated 2026-07-30 14:25 ·
       Source: Motosnap / VinSolutions annual sold extract + Active lot snapshot ·
-      Defaults: trailing 12 complete months · full exit picture · retail/wholesale always labeled & separable · New/Used/CPO split · no invented book/invoice ·
+      Defaults: trailing 12 complete months · New/Used/CPO hard split · no invented book/invoice ·
       Single-store manager pack · not a multi-store hub · beta internal only.
       Customer PII not included. Companion to GM Weekly (leads), not a replacement.
     </footer>
